@@ -535,7 +535,7 @@
 
 /*** Booking Start ***/
 .booking {
-    background: linear-gradient(rgba(82, 68, 4, 0.4), rgba(82, 68, 4, 0.4)), url(../img/booking-background.avif);
+    background: linear-gradient(rgba(82, 68, 4, 0.4), rgba(82, 68, 4, 0.4)), url(../img/booking-background.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;

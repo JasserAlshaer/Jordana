@@ -6,6 +6,19 @@ namespace Jordana.Controllers
 {
     public class HomeController : Controller
     {
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult Signup()
+        {
+            return View();
+        }
+        public IActionResult ResetPassword()
+        {
+            return View();
+        }
+
         public IActionResult Index () 
         { 
             return View(); 
@@ -36,10 +49,8 @@ namespace Jordana.Controllers
         }
         public IActionResult Testimonial()
         {
+           // var query = _mydatabase.Reviews.ToList();
             return View();
         }
-       
-
-
     }
 }

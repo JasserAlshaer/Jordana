@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jordana - Log In</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/loginDesign/css/style.css" />
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="form login">
+            <a class="logo" href="">
+                <img src="~/loginDesign/img/login.png" alt="Logo" />
+            </a>
+            <form>
+                <p>
+                    <label>Username or Email<span>*</span></label>
+                    <input type="email" required>
+                </p>
+                <p>
+                    <label>Password<span>*</span></label>
+                    <input type="password" required>
+                </p>
+                <p>
+                    <label>
+                        <a href="pass-reset.html">Forgot password?</a>
+                        <a href="registration.html">Create an account</a>
+                    </label>
+                    <input type="submit" value="Log In" />
+                </p>
+            </form>
+        </div>
+    </div>
+    <footer>
+        &copy; Jordana , All rights reserved.
+    </footer>
+</body>
+</html>
