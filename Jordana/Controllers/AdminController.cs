@@ -1,9 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Jordana.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 
 namespace Jordana.Controllers
 {
-    public class AdminController : Controller 
+    public class AdminController : Controller
     {
+
+
+
+        JordanaContext _mydatabase; //holder
+        public AdminController(JordanaContext mydatabase)
+        {
+            _mydatabase = mydatabase; //activation for dependacy injection 
+        }
         public IActionResult Dashboard()
         {
             return View();
