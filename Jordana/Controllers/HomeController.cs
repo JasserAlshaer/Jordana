@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Jordana.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Jordana.Controllers
 {
@@ -55,8 +56,15 @@ namespace Jordana.Controllers
         }
         public IActionResult Testimonial()
         {
-           // var query = _mydatabase.Reviews.ToList();
+            var reviews = _mydatabase.Reviews.Include(x=>x.User).OrderBy(c => c.ReviewId).ToList();
+            return View(reviews);
+            //return RedirectToAction("Index");
+
+        }
+        public IActionResult Dashboard()
+        {
             return View();
         }
+
     }
 }

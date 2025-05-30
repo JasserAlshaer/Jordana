@@ -52,15 +52,12 @@
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a href="#"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>
+                    <a asp-action="Signup"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>
                     <a asp-action="Login"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Login</small></a>
                     <div class="dropdown">
-                        <a href="#" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
+                        <a asp-action="Dashboard" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
                         <div class="dropdown-menu rounded">
-                            <a asp-action="AboutUs" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-user-alt me-2"></i> My Profile</a>
-                            <a href="#" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-comment-alt me-2"></i> Inbox</a>
-                            <a href="#" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-bell me-2"></i> Notifications</a>
-                            <a href="#" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-cog me-2"></i> Account Settings</a>
+                            <a asp-action="Profile" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-user-alt me-2"></i> My Profile</a>
                             <a href="#" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-power-off me-2"></i> Log Out</a>
                         </div>
                     </div>
@@ -81,21 +78,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link" style="border-color:#b88e5d;">Home</a>
-                    <a href="about.html" class="nav-item nav-link" style="border-color:#b88e5d;">About</a>
-                    <a href="services.html" class="nav-item nav-link" style="border-color:#b88e5d;">Services</a>
+                    <a asp-action="Index" class="nav-item nav-link" style="border-color:#b88e5d;">Home</a>
+                    <a asp-action="AboutUs" class="nav-item nav-link" style="border-color:#b88e5d;">About</a>
+                    <a asp-action="Services" class="nav-item nav-link" style="border-color:#b88e5d;">Services</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="border-color:#b88e5d;">Pages</a>
+                        <a asp-action="Index" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="border-color:#b88e5d;">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="destination.html" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Destination</a>
-                            <a href="booking.html" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Booking</a>
-                            <a href="guides.html" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Our Guides</a>
-                            <a href="testimonial.html" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Testimonial</a>
+                            <a asp-action="Destination" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Destination</a>
+                            <a asp-action="Booking" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Booking</a>
+                            <a asp-action="OurGuides" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Our Guides</a>
+                            <a asp-action="Testimonial" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Testimonial</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link" style="border-color:#b88e5d;">Contact</a>
+                    <a asp-action="ContactUs" class="nav-item nav-link" style="border-color:#b88e5d;">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" style="background-color: #b88e5d; border-color: #b88e5d; color: #fff;">Book Now</a>
+                <a asp-action="Booking" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" style="background-color: #b88e5d; border-color: #b88e5d; color: #fff;">Book Now</a>
             </div>
         </nav>
 
