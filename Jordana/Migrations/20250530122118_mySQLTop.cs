@@ -1,11 +1,12 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using MySql.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
 namespace Jordana.Migrations
 {
-    public partial class MySQLInit : Migration
+    public partial class mySQLTop : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +17,8 @@ namespace Jordana.Migrations
                 name: "Tourists_Sites",
                 columns: table => new
                 {
-                    Site_ID = table.Column<int>(type: "int", nullable: false),
+                    Site_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CreationDate = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "(now())"),
                     UpdateDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", unicode: false, nullable: true, defaultValueSql: "('System')"),
@@ -42,7 +44,8 @@ namespace Jordana.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    User_ID = table.Column<int>(type: "int", nullable: false),
+                    User_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CreationDate = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "(now())"),
                     UpdateDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", unicode: false, nullable: true, defaultValueSql: "('System')"),
@@ -64,7 +67,8 @@ namespace Jordana.Migrations
                 name: "Site_Media",
                 columns: table => new
                 {
-                    Media_ID = table.Column<int>(type: "int", nullable: false),
+                    Media_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CreationDate = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "(now())"),
                     UpdateDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", unicode: false, nullable: true, defaultValueSql: "('System')"),
@@ -88,7 +92,8 @@ namespace Jordana.Migrations
                 name: "Bookings",
                 columns: table => new
                 {
-                    Booking_ID = table.Column<int>(type: "int", nullable: false),
+                    Booking_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CreationDate = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "(now())"),
                     UpdateDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", unicode: false, nullable: true, defaultValueSql: "('System')"),
@@ -121,7 +126,8 @@ namespace Jordana.Migrations
                 name: "Reviews",
                 columns: table => new
                 {
-                    Review_ID = table.Column<int>(type: "int", nullable: false),
+                    Review_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CreationDate = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "(now())"),
                     UpdateDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", unicode: false, nullable: true, defaultValueSql: "('System')"),
@@ -152,7 +158,8 @@ namespace Jordana.Migrations
                 name: "User_Favorite",
                 columns: table => new
                 {
-                    Fav_ID = table.Column<int>(type: "int", nullable: false),
+                    Fav_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CreationDate = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "(now())"),
                     UpdateDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", unicode: false, nullable: true, defaultValueSql: "('System')"),
@@ -180,7 +187,8 @@ namespace Jordana.Migrations
                 name: "Booking_Members",
                 columns: table => new
                 {
-                    Mem_ID = table.Column<int>(type: "int", nullable: false),
+                    Mem_ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
                     CreationDate = table.Column<DateTime>(type: "datetime", nullable: true, defaultValueSql: "(now())"),
                     UpdateDate = table.Column<DateTime>(type: "datetime", nullable: true),
                     CreatedBy = table.Column<string>(type: "longtext", unicode: false, nullable: true, defaultValueSql: "('System')"),

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jordana.Migrations
 {
     [DbContext(typeof(JordanaContext))]
-    [Migration("20250530114500_MySQLInit")]
-    partial class MySQLInit
+    [Migration("20250530122118_mySQLTop")]
+    partial class mySQLTop
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,6 +24,7 @@ namespace Jordana.Migrations
             modelBuilder.Entity("Jordana.Models.Booking", b =>
                 {
                     b.Property<int>("BookingId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("Booking_ID");
 
@@ -88,6 +89,7 @@ namespace Jordana.Migrations
             modelBuilder.Entity("Jordana.Models.BookingMember", b =>
                 {
                     b.Property<int>("MemId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("Mem_ID");
 
@@ -160,6 +162,7 @@ namespace Jordana.Migrations
             modelBuilder.Entity("Jordana.Models.Review", b =>
                 {
                     b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("Review_ID");
 
@@ -216,6 +219,7 @@ namespace Jordana.Migrations
             modelBuilder.Entity("Jordana.Models.SiteMedium", b =>
                 {
                     b.Property<int>("MediaId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("Media_ID");
 
@@ -263,6 +267,7 @@ namespace Jordana.Migrations
             modelBuilder.Entity("Jordana.Models.TouristsSite", b =>
                 {
                     b.Property<int>("SiteId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("Site_ID");
 
@@ -353,6 +358,7 @@ namespace Jordana.Migrations
             modelBuilder.Entity("Jordana.Models.User", b =>
                 {
                     b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("User_ID");
 
@@ -421,6 +427,7 @@ namespace Jordana.Migrations
             modelBuilder.Entity("Jordana.Models.UserFavorite", b =>
                 {
                     b.Property<int>("FavId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasColumnName("Fav_ID");
 
