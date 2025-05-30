@@ -7,10 +7,10 @@ namespace Jordana.Controllers
 
     public class HomeController : Controller
     {
-        JordanaContext _myjo;
+        JordanaContext _mydatabase;
         public HomeController(JordanaContext myjo)
         {
-            _myjo = myjo; //activation for dependency injection 
+            _mydatabase = myjo; //activation for dependency injection 
         }
         public IActionResult Login()
         {
