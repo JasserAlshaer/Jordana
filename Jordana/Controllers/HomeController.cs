@@ -4,8 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Jordana.Controllers
 {
+
     public class HomeController : Controller
     {
+        JordanaContext _myjo;
+        public HomeController(JordanaContext myjo)
+        {
+            _myjo = myjo; //activation for dependency injection 
+        }
         public IActionResult Login()
         {
             return View();
