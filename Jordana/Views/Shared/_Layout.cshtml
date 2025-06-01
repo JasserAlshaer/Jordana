@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Jordana - Your Gateway To Jordan</title>
+    <title>Jordana - @ViewData["Title"]</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Tourism in Jordan, Tourist Information, Interactive Platform, Travel Assistance,
         Jordan Attractions,Jordan tourism, Petra, Dead Sea, Amman travel, travel guide Jordan, Jordana website" name="keywords">
@@ -27,6 +27,12 @@
 
     <!-- Template Stylesheet -->
     <link href="~/usertemplate/css/style.css" rel="stylesheet">
+    <style>
+        .dropdown-item:active, .dropdown-item.active {
+            color: #fff;
+            background-color: #b88e5d !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -52,15 +58,23 @@
             </div>
             <div class="col-lg-4 text-center text-lg-end">
                 <div class="d-inline-flex align-items-center" style="height: 45px;">
-                    <a asp-action="Signup"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>
-                    <a asp-action="Login"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Login</small></a>
-                    <div class="dropdown">
-                        <a asp-action="Dashboard" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
-                        <div class="dropdown-menu rounded">
-                            <a asp-action="Profile" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-user-alt me-2"></i> My Profile</a>
-                            <a href="#" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-power-off me-2"></i> Log Out</a>
+                    @if (ViewData["Profile"] == "Guest")
+                    {
+                        <a asp-action="Signup"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>
+                        <a asp-action="Login"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Login</small></a>
+
+                    }
+                    else
+                    {
+                        <div class="dropdown">
+                            <a asp-action="Dashboard" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
+                            <div class="dropdown-menu rounded">
+                                <a asp-action="Profile" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-user-alt me-2"></i> My Profile</a>
+                                <a href="#" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-power-off me-2"></i> Log Out</a>
+                            </div>
                         </div>
-                    </div>
+                    }
+                   
                 </div>
             </div>
         </div>
@@ -78,19 +92,101 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a asp-action="Index" class="nav-item nav-link" style="border-color:#b88e5d;">Home</a>
-                    <a asp-action="AboutUs" class="nav-item nav-link" style="border-color:#b88e5d;">About</a>
-                    <a asp-action="Services" class="nav-item nav-link" style="border-color:#b88e5d;">Services</a>
+                    @if (ViewData["Title"]=="Home")
+                    {
+                        <a asp-action="Index" class="nav-item nav-link active" style="border-color:#b88e5d;">Home</a>
+
+                    }
+                    else
+                    {
+                        <a asp-action="Index" class="nav-item nav-link " style="border-color:#b88e5d;">Home</a>
+
+                    }
+                    @if (ViewData["Title"] == "About Us")
+                    {
+                        <a asp-action="AboutUs" class="nav-item nav-link active" style="border-color:#b88e5d;">About</a>
+
+                    }
+                    else
+                    {
+                        <a asp-action="AboutUs" class="nav-item nav-link" style="border-color:#b88e5d;">About</a>
+
+                    }
+                    @if (ViewData["Title"] == "Services")
+                    {
+                        <a asp-action="Services" class="nav-item nav-link active" style="border-color:#b88e5d;">Services</a>
+
+                    }
+                    else
+                    {
+                        <a asp-action="Services" class="nav-item nav-link" style="border-color:#b88e5d;">Services</a>
+
+                    }
+
                     <div class="nav-item dropdown">
-                        <a asp-action="Index" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="border-color:#b88e5d;">Pages</a>
+                        @if (ViewData["Title"] == "Destination" || ViewData["Title"] == "Booking" || ViewData["Title"] == "Our Guides" || ViewData["Title"] == "Testimonial")
+                        {
+                            <a asp-action="Index" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="border-color:#b88e5d;">Pages</a>
+
+                        }
+                        else
+                        {
+                            <a asp-action="Index" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="border-color:#b88e5d;">Pages</a>
+
+                        }
                         <div class="dropdown-menu m-0">
-                            <a asp-action="Destination" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Destination</a>
-                            <a asp-action="Booking" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Booking</a>
-                            <a asp-action="OurGuides" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Our Guides</a>
-                            <a asp-action="Testimonial" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Testimonial</a>
+                            @if (ViewData["Title"] == "Destination")
+                            {
+                                <a asp-action="Destination" class="dropdown-item active" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Destination</a>
+
+                            }
+                            else
+                            {
+                                <a asp-action="Destination" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Destination</a>
+
+                            }
+                            @if (ViewData["Title"] == "Booking" && ViewData["Profile"] == "Customer")
+                            {
+                                <a asp-action="Booking" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Booking</a>
+
+                            }
+                            else if (ViewData["Profile"] == "Customer")
+                            {
+                                <a asp-action="Booking" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Booking</a>
+
+                            }
+                            @if (ViewData["Title"] == "Our Guides")
+                            {
+                                <a asp-action="OurGuides" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Our Guides</a>
+
+                            }
+                            else
+                            {
+                                <a asp-action="OurGuides" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Our Guides</a>
+
+                            }
+                            @if (ViewData["Title"] == "Testimonial")
+                            {
+                                <a asp-action="Testimonial" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Testimonial</a>
+
+                            }
+                            else
+                            {
+                                <a asp-action="Testimonial" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Testimonial</a>
+
+                            }
                         </div>
                     </div>
-                    <a asp-action="ContactUs" class="nav-item nav-link" style="border-color:#b88e5d;">Contact</a>
+                    @if (ViewData["Title"] == "Contact Us")
+                    {
+                        <a asp-action="ContactUs" class="nav-item nav-link active" style="border-color:#b88e5d;">Contact</a>
+
+                    }
+                    else
+                    {
+                        <a asp-action="ContactUs" class="nav-item nav-link" style="border-color:#b88e5d;">Contact</a>
+
+                    }
                 </div>
                 <a asp-action="Booking" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" style="background-color: #b88e5d; border-color: #b88e5d; color: #fff;">Book Now</a>
             </div>
@@ -117,24 +213,18 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                        <h4 class="mb-4 text-primary">Company</h4>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> About</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Careers</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Blog</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Press</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Gift Cards</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Magazine</a>
+                            <h4 class="mb-4 text-primary">Our Vision</h4>
+                            <p>
+                                To create a welcoming digital space that inspires people to explore the beauty, culture, and hidden gems of our destinations. I envision a world where travel is not just about places, but about meaningful experiences that connect people, promote understanding, and leave a lasting impact.
+</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                        <h4 class="mb-4 text-primary">Support</h4>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Contact</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Legal Notice</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Terms and Conditions</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Sitemap</a>
-                        <a href=""><i class="fas fa-angle-right me-2"></i> Cookie policy</a>
+                            <h4 class="mb-4 text-primary">Our Message</h4>
+                            <p>
+                                Travel opens hearts and minds. Through this platform, I aim to share the stories, sights, and soul of each destination—to help travelers plan unforgettable journeys, support local communities, and discover the world with curiosity and respect.
+</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
@@ -156,9 +246,9 @@
                                     <div class="form-floating">
                                         <select class="form-select text-white" style="background-color: var(--bs-primary)" id="select1">
                                             <option value="1">JOD</option>
-                                            <option value="2">EUR</option>
+                                           @*  <option value="2">EUR</option>
                                             <option value="3">USD</option>
-                                            <option value="3">GBP</option>
+                                            <option value="3">GBP</option> *@
                                         </select>
                                         <label for="select1" style="color: var(--bs-dark)">Currency</label>
                                     </div>
@@ -184,7 +274,7 @@
     <div class="container-fluid copyright text-body py-4">
         <div class="container">
             <div class="row g-4 align-items-center">
-                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <div class="col-md-6 text-center text-md-end mb-md-0 text-white">
                     <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Jordana</a> , All rights reserved.
                 </div>
 
