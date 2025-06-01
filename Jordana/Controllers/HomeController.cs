@@ -27,8 +27,10 @@ namespace Jordana.Controllers
         }
 
         public IActionResult Index () 
-        { 
-            return View(); 
+        {
+            var reviews = _mydatabase.Reviews.Include(x => x.User).OrderBy(c => c.ReviewId).ToList();
+            return View(reviews);
+           
         }
         public IActionResult AboutUs()
         { 
@@ -36,7 +38,25 @@ namespace Jordana.Controllers
         }
         public IActionResult ContactUs()
         {
+
             return View();
+        }
+        [HttpPost]
+        public IActionResult ContactUs(string name, string email, string subject,string message)
+        {
+            SupportMessage msg = new SupportMessage()
+            {
+                Name = name,
+                Email = email,
+                Subject = subject,
+                Message = message
+            };
+            _mydatabase.Add(msg);
+            _mydatabase.SaveChanges();
+            return RedirectToAction("Index");
+
+
+
         }
         public IActionResult Services()
         { 
@@ -44,7 +64,8 @@ namespace Jordana.Controllers
         }
         public IActionResult Destination()
         {
-            return View();
+            var destination = _mydatabase.TouristsSites.OrderBy(c => c.SiteName).ToList();
+            return View(destination);
         }
         public IActionResult Booking()
         {
@@ -64,6 +85,12 @@ namespace Jordana.Controllers
         public IActionResult Dashboard()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult SearchDestination(string keyword)
+        {
+            var destination = _mydatabase.TouristsSites.Where(d=>d.SiteName.Contains(keyword,StringComparison.OrdinalIgnoreCase)).OrderBy(c => c.SiteName).ToList();
+            return View("Destination", destination);
         }
 
     }

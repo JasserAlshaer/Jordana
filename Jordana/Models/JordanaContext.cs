@@ -17,6 +17,8 @@ namespace Jordana.Models
         public virtual DbSet<TouristsSite> TouristsSites { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserFavorite> UserFavorites { get; set; } = null!;
+        public virtual DbSet<SupportMessage> SupportMessages { get; set; } = null!;
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -204,7 +206,13 @@ namespace Jordana.Models
                     .HasForeignKey(d => d.UserId)
                     .HasConstraintName("FK_UF");
             });
-
+            modelBuilder.Entity<SupportMessage>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Id)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("Id");
+            });
             OnModelCreatingPartial(modelBuilder);
         }
 
