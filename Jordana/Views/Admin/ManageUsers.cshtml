@@ -1,8 +1,8 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Jordana.DTOs
+@model List<UserViewModel>;
 @{
 	Layout = "_LayoutAdmin";
+	ViewData["Title"] = "ManageUsers";
 }
 <main class="content">
 	<div class="container-fluid p-0">
@@ -27,15 +27,16 @@
 							</tr>
 						</thead>
 						<tbody>
+							@foreach (var item in Model){
 							<tr>
-								<td>jaser Khaled alsaaer</td>
-								<td class="d-none d-xl-table-cell">28/04/2025</td>
-								<td class="d-none d-xl-table-cell">jaser@gmail.com</td>
-								<td class="badge bg-success">079989999</td>
-								<td class="d-none d-md-table-cell"> 0</td>
+								<td>@item.UserName</td>
+									<td class="d-none d-xl-table-cell">@item.JoinDate</td>
+								<td class="d-none d-xl-table-cell">@item.Email</td>
+									<td class="badge bg-success">@item.Phone</td>
+									<td class="d-none d-md-table-cell"> @item.Booking</td>
 							</tr>
 							
-							
+							}
 							
 						
 						</tbody>

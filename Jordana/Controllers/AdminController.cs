@@ -1,4 +1,5 @@
-﻿using Jordana.Models;
+﻿using Jordana.DTOs;
+using Jordana.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
 
@@ -41,7 +42,15 @@ namespace Jordana.Controllers
 
         public IActionResult ManageUsers()
         {
-            return View();
+            var items = _mydatabase.Users.Where(c=>c.UserType== "User").Select(x => new UserViewModel
+            {
+                UserName = x.Username,
+                JoinDate = ((DateTime)x.CreationDate).ToShortDateString(),
+                Email=x.Email,
+                Phone= x.PhoneNumber,
+                Booking=_mydatabase.Bookings.Where(b=>b.UserId==x.UserId).Count()
+            }).ToList();
+            return View(items);
         }
 
         public IActionResult ManageRating()
@@ -51,6 +60,22 @@ namespace Jordana.Controllers
         public IActionResult Logout()
         {
             return RedirectToAction("Index","Home");
+        }
+        public IActionResult SupportMessage()
+
+        {
+
+            var items = _mydatabase.SupportMessages.ToList();
+            return View(items);
+        }
+        public IActionResult DeleteSupportMessage(int Id)
+        {
+            var item = _mydatabase.SupportMessages.FirstOrDefault(x => x.Id == Id);
+            _mydatabase.Remove(item);
+            _mydatabase.SaveChanges();
+            return RedirectToAction("SupportMessage");
+
+
         }
 
 
