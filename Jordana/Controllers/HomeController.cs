@@ -69,6 +69,22 @@ namespace Jordana.Controllers
         }
         public IActionResult Booking()
         {
+            //var test = _mydatabase.Bookings.Where(x => x.BookingId == 1)
+                
+            //    .Include(x => x.User)
+            //    .Include(m => m.BookingMembers)
+            //    .Include(s => s.Site).ThenInclude(p => p.SiteMedia)
+            //    .FirstOrDefault();
+
+            var test = _mydatabase.TouristsSites.Where(x=>x.SiteId ==22)
+                .Include(x => x.SiteMedia)
+                .FirstOrDefault();
+            return View(test);
+        }
+        [HttpPost]
+        public IActionResult Booking(int userid)
+        {
+            
             return View();
         }
         public IActionResult OurGuides()
