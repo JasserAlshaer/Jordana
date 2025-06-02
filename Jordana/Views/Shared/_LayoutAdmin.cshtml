@@ -29,51 +29,56 @@
 				</a>
 
 				<ul class="sidebar-nav">
-					
+    <li class="sidebar-item active">
+        <a class="sidebar-link" asp-action="Dashboard">
+            <i class="align-middle" data-feather="sliders"></i>
+            <span class="align-middle">Dashboard</span>
+        </a>
+    </li>
 
-					<li class="sidebar-item active">
-						<a class="sidebar-link" asp-action="Dashboard">
-							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-						</a>
-					</li>
+    <li class="sidebar-item">
+        <a class="sidebar-link" asp-action="Profile">
+            <i class="align-middle" data-feather="user"></i>
+            <span class="align-middle">Profile</span>
+        </a>
+    </li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" asp-action="Profile">
-							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-						</a>
-					</li>
+    <li class="sidebar-item">
+        <a class="sidebar-link" asp-action="ManageBooking">
+            <i class="align-middle" data-feather="book-open"></i>
+            <span class="align-middle">Manage Booking</span>
+        </a>
+    </li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" asp-action="ManageBooking">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">ManageBooking </span>
-						</a>
-					</li>
+    <li class="sidebar-item">
+        <a class="sidebar-link" asp-action="ManageDestinations">
+            <i class="align-middle" data-feather="map"></i>
+            <span class="align-middle">Manage Destinations</span>
+        </a>
+    </li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" asp-action="ManageDestinations">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle"> ManageDestinations</span>
-						</a>
-					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" asp-action="ManageRating">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">ManageRating </span>
-						</a>
-					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" asp-action="ManageUsers">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">ManageUsers </span>
-						</a>
-					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" asp-action="Logout">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Logout</span>
-						</a>
-					</li>
-		
+    <li class="sidebar-item">
+        <a class="sidebar-link" asp-action="ManageRating">
+            <i class="align-middle" data-feather="star"></i>
+            <span class="align-middle">Manage Ratings</span>
+        </a>
+    </li>
 
+    <li class="sidebar-item">
+        <a class="sidebar-link" asp-action="ManageUsers">
+            <i class="align-middle" data-feather="users"></i>
+            <span class="align-middle">Manage Users</span>
+        </a>
+       
+    </li>
 
-
-				</ul>
+    <li class="sidebar-item">
+        <a class="sidebar-link" asp-action="Logout">
+            <i class="align-middle" data-feather="log-out"></i>
+            <span class="align-middle">Logout</span>
+        </a>
+    </li>
+</ul>
 
 				
 			</div>
@@ -243,33 +248,6 @@
 
 			@RenderBody()
 
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> &copy;
-							</p>
-						</div>
-						<div class="col-6 text-end">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</footer>
 		</div>
 	</div>
 

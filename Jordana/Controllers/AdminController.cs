@@ -34,6 +34,11 @@ namespace Jordana.Controllers
             return View();
         }
 
+        public IActionResult GetBookingDetails()
+        {
+            return View();
+        }
+
         public IActionResult ManageUsers()
         {
             return View();
@@ -45,7 +50,9 @@ namespace Jordana.Controllers
         }
         public IActionResult Logout()
         {
-            return View();
+            return RedirectToAction("Index","Home");
         }
+
+
     }
 }
