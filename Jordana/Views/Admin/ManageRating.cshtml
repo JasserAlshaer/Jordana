@@ -1,10 +1,11 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Jordana.DTOs
+@model List<Review>;
+
 @{
-	Layout = "_LayoutAdmin";
-	ViewData["Title"] = "ManageRating";
+    ViewData["Title"] = "ManageRating";
+    Layout = "_LayoutAdmin";
 }
+
 <main class="content">
 	<div class="container-fluid p-0">
 
@@ -24,35 +25,41 @@
 								<th class="d-none d-xl-table-cell">Time of Submission</th>
 								<th class="d-none d-xl-table-cell">comment</th>
 								<th>Rate</th>
-								<th class="d-none d-md-table-cell">SiteName</th>
+								<th>
+							Is Accepted
+								</th>
 								<th>Action</th>
 
+
 							</tr>
-							
+
 						</thead>
 						<tbody>
-							
+							@foreach(var item in Model){
 							<tr>
-								<td>leen omar</td>
-								<td class="d-none d-xl-table-cell">21/9/2025</td>
-								<td class="d-none d-xl-table-cell">AddComment</td>
-								<td>5 stars</td>
-								<td class="d-none d-md-table-cell">petra</td>
+								
+								<td>@item.User.Username</td>
+								<td class="d-none d-xl-table-cell">@item.CreationDate</td>
+								<td class="d-none d-xl-table-cell">@item.Comment</td>
+								<td>@item.Rating stars</td>
+								<td>@item.IsAccepted</td>
+								
 
 
 
 
 								<td>
-									<a class="btn btn-outline-success" style="float:left; margin-left:12px;">Approve</a>
-									<a class="btn btn-outline-danger" style="margin-left:12px;">Reject</a>
+										<a class="btn btn-outline-success" style="float:left; margin-left:12px;" asp-action="IsAccepted" asp-route-ReviewId="@item.ReviewId" asp-route-value="true">Approve</a>
+										<a class="btn btn-outline-danger" style="margin-left:12px;" asp-action="IsAccepted" asp-route-ReviewId="@item.ReviewId"asp-route-value="false">Reject</a>
 								</td>
 
 
 
 							</tr>
-					
-							
-							
+							}
+
+
+
 
 
 						</tbody>

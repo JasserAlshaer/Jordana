@@ -1,6 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model List<TouristsSite>;
 @{
 	Layout = "_LayoutAdmin";
 	ViewData["Title"] = "ManageDestinations";
@@ -13,7 +11,7 @@
 		<div class="row">
 			<div class="col-18 col-lg-16 col-xxl-12 d-flex">
 				<div class="card flex-fill">
-					
+
 					<table class="table table-hover my-0">
 						<thead>
 							<tr>
@@ -31,24 +29,34 @@
 							</tr>
 						</thead>
 						<tbody>
-				<tr> 
-								<td>The Roman Theater</td>
-								<td class="d-none d-xl-table-cell">Amman</td>
-								<td class="d-none d-xl-table-cell">Amman</td>
-								<td><a a class="badge bg-success">Open maps</a></td>
-								<td class="d-none d-md-table-cell">Historical </td>
-								<td>1 Jd</td>
-								<td>8AM to 8PM</td>
-						<td>
-							<a class="btn btn-outline-info" style="float:left; margin-left:12px;">Show Details</a>
-						<a class="btn btn-outline-success" style="float:left; margin-left:12px;">View Details</a>
+							@foreach(var item in Model){
+								<tr>
+									<td>@item.SiteName</td>
+									<td class="d-none d-xl-table-cell">@item.City</td>
+									<td class="d-none d-xl-table-cell">@item.Region</td>
+									<td><a href="@item.SiteLocation"target="_blank" class="badge bg-success">Open maps</a></td>
+									<td class="d-none d-md-table-cell">@item.Category</td>
+									@if (item.EntryFee == "Free")
+									{
+										<td>Free</td>
+									}
+									else
+									{
+										<td> @item.EntryFee Jd</td>
+									}
+									
+								<td>@item.OpeningHours</td>
+								<td>
+									<a class="btn btn-outline-info" style="float:left; margin-left:12px;">Show Details</a>
+									<a class="btn btn-outline-success" style="float:left; margin-left:12px;">View Details</a>
 									<a class="btn btn-outline-warning" style="margin-left:12px;">Edit</a>
-							<a class="btn btn-outline-danger" style="margin-left:12px;">Disable</a>
-						</td>
-							
-						</tr>
+									<a class="btn btn-outline-danger" style="margin-left:12px;">Disable</a>
+								</td>
 
-							
+							</tr>
+							}
+
+
 						</tbody>
 					</table>
 				</div>

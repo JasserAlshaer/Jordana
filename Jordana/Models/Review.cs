@@ -18,5 +18,6 @@ namespace Jordana.Models
 
         public virtual TouristsSite Site { get; set; } = null!;
         public virtual User User { get; set; } = null!;
+        public bool? IsAccepted { get; set; }
     }
 }
