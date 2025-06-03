@@ -1,13 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Jordana.DTOs
+@model List<Booking_View_Modele>;
 @{
 	Layout = "_LayoutAdmin";
+	ViewData["Title"] = "ManageBooking";
 }
 <main class="content">
 	<div class="container-fluid p-0">
 
-		<h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
+		<h1 class="h3 mb-3"><strong>Manage</strong> Booking</h1>
 
 		<div class="row">
 
@@ -29,18 +29,20 @@
 							</tr>
 						</thead>
 						<tbody>
+							@foreach (var item in Model){
 							<tr>
-								<td>The Roman Theater</td>
-								<td class="d-none d-xl-table-cell">01/01/2021</td>
-								<td class="d-none d-xl-table-cell">Amman</td>
-								<td><span class="badge bg-success">7</span></td>
-								<td class="d-none d-md-table-cell">800 </td>
+								<td>@item.SiteName</td>
+								<td class="d-none d-xl-table-cell">@item.StartDate</td>
+								<td class="d-none d-xl-table-cell">@item.Location</td>
+								<td><span class="badge bg-success">@item.InvitedMembers</span></td>
+								<td class="d-none d-md-table-cell">@item.TotalPrice </td>
 								<td>
 									<a class="btn btn-outline-success" style="float:left; margin-left:12px;" >Approve</a>
 									<a class="btn btn-outline-info" style="margin-left:12px;" asp-action="GetBookingDetails">Get details</a>
 									<a class="btn btn-outline-danger" style="margin-left:12px;" >Reject</a>
 								</td>
 							</tr>
+							}
 							
 							
 							
