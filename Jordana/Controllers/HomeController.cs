@@ -64,6 +64,7 @@ namespace Jordana.Controllers
         }
         public IActionResult Destination()
         {
+            var categories=_mydatabase.TouristsSites.GroupBy(x => x.Category).Select()
             var destination = _mydatabase.TouristsSites.OrderBy(c => c.SiteName).ToList();
             return View(destination);
         }
@@ -108,6 +109,14 @@ namespace Jordana.Controllers
             var destination = _mydatabase.TouristsSites.Where(d=>d.SiteName.Contains(keyword,StringComparison.OrdinalIgnoreCase)).OrderBy(c => c.SiteName).ToList();
             return View("Destination", destination);
         }
+        public IActionResult ManageBookingMembers()
+        {
+            var members=_mydatabase.BookingMembers.Where(d=>d.BookingId==1).Include(x=>x.Booking)
+                .ThenInclude(y=>y.Site)
+                .ToList();
+            return View(members);
+        }
+
 
     }
 }

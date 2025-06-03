@@ -32,7 +32,7 @@
     <!--Space End-->
 
     <!--Slider Header Start-->
-    <div class="container text-start" style="margin-top: 60px; margin-bottom: 20px;">
+    <div class="container text-start" style="margin-top: 40px; margin-bottom: 20px;">
         <h6 class="fw-normal display-6 mb-0 text-primary">
             <i class="fa fa-images" style="color: #b88e5d;"></i>Site Gallery
         </h6>
@@ -69,15 +69,42 @@
     </div>
     <!--Space End-->
 
+    <div>
+        <div class="container text-start" style="margin-top: 40px; margin-bottom: 20px;">
+            <h6 class="fw-normal display-6 mb-0 text-primary">
+                <i class="fa fa-link" style="color: #b88e5d;"></i>Site External Resources
+            </h6>
+            <div class="row">
+                @foreach(var item in Model.SiteMedia)
+                {
+                    if (item.Type != "Image")
+                    {
+                        <div class="col-md-4 col-sm-12" style="margin-top: 5px;">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Learn More About @Model.SiteName With </h5>
+                                    <p class="card-text">@item.Type</p>
+                                    <a href="@item.Url" target="_blank" class="btn btn-primary">Open Link</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                   
+                }
+                
+            </div>
+        </div>
+    </div>
     <!--Table Header Start-->
-    <div class="container text-start" style="margin-top: 60px; margin-bottom: 20px;">
-        <h1 class="fw-normal display-6 mb-0 text-primary">
+    <div class="container text-start" style="margin-top: 40px; margin-bottom: 20px;">
+        <h6 class="fw-normal display-6 mb-0 text-primary">
             <i class="fa fa-landmark " style="color: #b88e5d;"></i>Site Details
-        </h1>
+        </h6>
     </div>
     <!--Table Header End-->
 
     <!--Table Start-->
+    <div style="padding: 15px;">
     <table class="table table-bordered border-light table-striped table-hover" >
         <thead style="background-color: #b88e5d; color: white;">
             <tr>
@@ -99,13 +126,14 @@
                 <td>@Model.SiteDescription</td>
                 <td>@Model.City</td>
                 <td>@Model.Region</td>
-                <td>@Model.SiteLocation</td>
+                <td><a href="@Model.SiteLocation" target="_blank" class="badge bg-primary">Open maps</a></td>
                 <td>@Model.Category</td>
                 <td>@Model.EntryFee</td>
                 <td>@Model.OpeningHours</td>
             </tr>
         </tbody>
     </table>
+    </div>
     <!--Table End-->
 
     <!--Booking Start -->

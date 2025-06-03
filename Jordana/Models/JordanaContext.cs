@@ -18,7 +18,8 @@ namespace Jordana.Models
         public virtual DbSet<User> Users { get; set; } = null!;
         public virtual DbSet<UserFavorite> UserFavorites { get; set; } = null!;
         public virtual DbSet<SupportMessage> SupportMessages { get; set; } = null!;
-       
+        public virtual DbSet<PaymentCard> PaymentCards { get; set; } = null!;
+      
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -212,6 +213,13 @@ namespace Jordana.Models
                 entity.Property(e => e.Id)
                     .ValueGeneratedOnAdd()
                     .HasColumnName("Id");
+            });
+            modelBuilder.Entity<PaymentCard>(entity =>
+            {
+                entity.HasKey(e => e.PaymentId);
+                entity.Property(e => e.PaymentId)
+                    .ValueGeneratedOnAdd()
+                    .HasColumnName("PaymentId");
             });
             OnModelCreatingPartial(modelBuilder);
         }

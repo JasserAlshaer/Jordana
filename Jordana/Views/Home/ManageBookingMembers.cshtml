@@ -1,0 +1,216 @@
+﻿@model List<BookingMember>;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	ViewData["Title"] = "Manage Booking Members";
+	ViewData["Profile"] = "Customer";
+}
+<style>
+	.btn-primary:hover {
+		color: #b88e5d !important;
+		background-color: #fff !important;
+		border-color: #b88e5d !important;
+	}
+</style>
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb" style="background-image:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)),url('https://i0.wp.com/www.touristjordan.com/wp-content/uploads/2022/05/shutterstock_1030695895-scaled.jpg?resize=2000%2C800&ssl=1') ; background-size: cover; background-position: center;">
+	<div class="container text-center py-5" style="max-width: 900px;">
+		@if (Model != null && Model.Count != 0)
+		{
+			<h3 class="text-white display-3 mb-4">@Model[0].Booking.Site.SiteName</h3>
+
+		}
+		<ol class="breadcrumb justify-content-center mb-0">
+			<li class="breadcrumb-item active text-white">Add Members To Your Booking</li>
+		</ol>
+	</div>
+</div>
+<!-- Header End --><!--Table Start-->
+<div style="padding: 15px;">
+	<button class="btn btn-primary text-white py-3" style="float: right; margin-right: 10px; margin-bottom: 10px;" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Create</button>
+	<button class="btn btn-primary text-white py-3" style="float: right; margin-right: 10px; margin-bottom: 10px;" type="button" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg-2">Checkout</button>
+	<table class="table table-bordered border-light table-striped table-hover">
+		<thead style="background-color: #b88e5d; color: white;">
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Age</th>
+				<th scope="col">National ID / Passport Number</th>
+				<th scope="col">Phone Number</th>
+				<th scope="col">Reference Name</th>
+				<th scope="col">Reference Phone Number</th>
+				<th scope="col">Relationship</th>
+			</tr>
+		</thead>
+		<tbody class="table table-bordered border-primary">
+			@foreach (var item in Model)
+			{
+				<tr>
+					<th scope="row">@item.Name</th>
+					<td>@item.Gender</td>
+					<td>@item.Age</td>
+					@if (item.NationalId == "")
+					{
+						<td>@item.PassportNumber</td>
+					}
+					else
+					{
+						<td>@item.NationalId</td>
+					}
+
+					<td>@item.PhoneNumber</td>
+					<td>@item.ReferenceName</td>
+					<td>@item.ReferencePhoneNumber</td>
+					<td>@item.Relationship</td>
+				</tr>
+			}
+
+		</tbody>
+	</table>
+</div>
+
+<!--Create Booking Member-->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="myLargeModalLabel">Add Booking Member</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+
+					<div class="col-lg-12">
+						<h1 class="text-white mb-3">Booking Form</h1>
+						<form>
+							<div class="row g-3">
+								<div class="col-md-6">
+									<div class="form-floating">
+										<input type="text" class="form-control bg-white border-0" id="name" placeholder="Member Name">
+										<label for="name">Member Name</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-floating">
+										<input type="number" class="form-control bg-white border-0" id="email" placeholder="Member Age">
+										<label for="Age">Member Age</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-floating">
+										<input type="text" class="form-control bg-white border-0" id="email" placeholder="Member National Number">
+										<label for="Age">Member National Number</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-floating">
+										<input type="text" class="form-control bg-white border-0" id="name" placeholder="Member Phone Number">
+										<label for="name">Member Phone Number</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-floating">
+										<input type="text" class="form-control bg-white border-0" id="name" placeholder="Member Reference Name">
+										<label for="name">Member Reference Name</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-floating">
+										<input type="text" class="form-control bg-white border-0" id="name" placeholder="Member Reference Phone Number">
+										<label for="name">Member Reference Phone Number</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-floating">
+										<select class="form-select bg-white border-0" id="select1">
+											<option value="Male">Male</option>
+											<option value="Female">Female</option>
+										</select>
+										<label for="select1">Gender</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-floating">
+										<select class="form-select bg-white border-0" id="SelectPerson">
+											<option value="Family">Family</option>
+											<option value="Friend">Friend</option>
+											<option value="Sibling">Sibling</option>
+											<option value="Parents">Parents</option>
+											<option value="Others">Others</option>
+										</select>
+										<label for="SelectPerson">Relationship</label>
+									</div>
+								</div>
+								<div class="form-check form-switch">
+									<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+									<label class="form-check-label" for="flexSwitchCheckDefault">Is Jordanian</label>
+								</div>
+
+								<div class="col-12">
+									<button class="btn btn-primary text-white w-100 py-3" type="submit">Save Member</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--Checkout and Payment-->
+<div class="modal fade bd-example-modal-lg-2" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="myLargeModalLabel">Checkout and Payment</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div style="text-align: right;">
+					<i class="fa fa-close close" data-bs-dismiss="modal" style="font-size: 21px; cursor: pointer;"></i>
+				</div>
+
+				<div style="margin-top: 1.5rem; margin-left: 1.5rem; margin-right: 1.5rem;">
+					<div style="text-align: center;">
+						<h5>Credit card</h5>
+					</div>
+					<div class="form" style="margin-top: 1rem;">
+						<div class="inputbox" style="position: relative; margin-bottom: 20px; width: 100%;">
+							<input type="text" name="name" class="form-control" required="required"
+								   style="border-bottom: 1px solid #eee; border: none; font-weight: 600;">
+							<span style="position: absolute; top: 7px; left: 11px; transition: 0.5s;">Cardholder Name</span>
+						</div>
+
+						<div class="inputbox" style="position: relative; margin-bottom: 20px; width: 100%;">
+							<input type="text" name="card" class="form-control" required="required"
+								   style="border-bottom: 1px solid #eee; border: none; font-weight: 600;">
+							<span style="position: absolute; top: 7px; left: 11px; transition: 0.5s;">Card Number</span>
+							<i class="fa fa-eye" style="position: absolute; top: 13px; right: 8px; transition: 0.5s; color: #3F51B5;"></i>
+						</div>
+
+						<div class="d-flex flex-row">
+							<div class="inputbox" style="position: relative; margin-bottom: 20px; width: 100%; margin-right: 10px;">
+								<input type="text" name="exp" class="form-control" required="required"
+									   style="border-bottom: 1px solid #eee; border: none; font-weight: 600;">
+								<span style="position: absolute; top: 7px; left: 11px; transition: 0.5s;">Expiration Date</span>
+							</div>
+
+							<div class="inputbox" style="position: relative; margin-bottom: 20px; width: 100%;">
+								<input type="text" name="cvv" class="form-control" required="required"
+									   style="border-bottom: 1px solid #eee; border: none; font-weight: 600;">
+								<span style="position: absolute; top: 7px; left: 11px; transition: 0.5s;">CVV</span>
+							</div>
+						</div>
+
+						<div class="pay" style="padding-left: 3rem; padding-right: 3rem;">
+							<button class="btn btn-primary btn-block" style="height: 47px; border-radius: 37px;">Payment and Save Booking</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

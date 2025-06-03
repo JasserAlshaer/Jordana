@@ -18,6 +18,8 @@ namespace Jordana.Models
         public string? PassportNumber { get; set; }
         public string PhoneNumber { get; set; } = null!;
         public string ReferencePhoneNumber { get; set; } = null!;
+        public string ReferenceName { get; set; } = null!;
+        public string Relationship { get; set; } = null!;
 
         public virtual Booking Booking { get; set; } = null!;
     }
