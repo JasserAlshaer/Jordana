@@ -28,6 +28,7 @@ namespace Jordana.Models
         public string Category { get; set; } = null!;
         public string? EntryFee { get; set; }
         public string? OpeningHours { get; set; }
+        public string MainImage { get; set; }
 
         public virtual ICollection<Booking> Bookings { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }

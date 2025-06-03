@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using Jordana.DTOs;
 using Jordana.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -64,9 +65,12 @@ namespace Jordana.Controllers
         }
         public IActionResult Destination()
         {
-            var categories=_mydatabase.TouristsSites.GroupBy(x => x.Category).Select()
+            var categories = _mydatabase.TouristsSites.GroupBy(x => x.Region).Select(c => new CategoryDTO
+            {
+                Name = c.Key
+            }).ToList();
             var destination = _mydatabase.TouristsSites.OrderBy(c => c.SiteName).ToList();
-            return View(destination);
+            return View(Tuple.Create(destination,categories));
         }
         public IActionResult Booking()
         {
