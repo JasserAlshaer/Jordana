@@ -18,9 +18,48 @@ namespace Jordana.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Login( string email, string password)
+        {
+            var user = _mydatabase.Users.Where(x => x.Email == email && x.Password == password).SingleOrDefault();
+            if (user == null)
+            {
+                return View();
+            }
+
+
+
+            HttpContext.Session.SetInt32("UserId", user.UserId);
+            if (user.UserType == "Admin")
+            {
+                return RedirectToAction("Dashboard","Admin");
+            }
+           
+            return RedirectToAction("Index");
+        }
+       
         public IActionResult Signup()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Signup(string fullname,string email,string password,string repassword,string phonenumber)
+        {
+
+            User customer = new User()
+            {
+                Username = fullname,
+                Email = email,
+                Password = password,
+                PhoneNumber = phonenumber,
+                ProfileImage = "",
+                CreationDate = DateTime.Now,
+                CreatedBy = "system",
+                UserType = "User"
+            };
+           _mydatabase.Users.Add(customer);
+            _mydatabase.SaveChanges();
+            return RedirectToAction("Login");
         }
         public IActionResult ResetPassword()
         {

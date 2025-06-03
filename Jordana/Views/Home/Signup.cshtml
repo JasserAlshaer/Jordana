@@ -18,30 +18,30 @@
             <a class="logo" href="">
                 <img src="~/loginDesign/img/login.png" alt="Logo" />
             </a>
-            <form>
+            <form asp-action="Signup"method="post">
                 <p>
-                    <label>First name<span>*</span></label>
-                    <input type="text" required>
+                    <label>Full Name <span>*</span></label>
+                    <input type="text" name="fullname" required>
                 </p>
                 <p>
-                    <label>Last name<span>*</span></label>
-                    <input type="text" required>
+                    <label>Phone Number<span>*</span></label>
+                    <input type="text" name="phonenumber"required>
                 </p>
                 <p>
                     <label>Email<span>*</span></label>
-                    <input type="email" required>
+                    <input type="email"name="email" required>
                 </p>
                 <p>
                     <label>Password<span>*</span></label>
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                 </p>
                 <p>
                     <label>Enter password again<span>*</span></label>
-                    <input type="password" required>
+                    <input type="password"name="repassword" required>
                 </p>
                 <p>
                     <label>
-                        <a href="index.html">Have an account?</a>
+                        <a asp-action= "Login">Have an account?</a>
                     </label>
                     <input type="submit" value="Sign Up" />
                 </p>

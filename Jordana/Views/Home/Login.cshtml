@@ -18,19 +18,18 @@
             <a class="logo" href="">
                 <img src="~/loginDesign/img/login.png" alt="Logo" />
             </a>
-            <form>
+            <form asp-action="Login" method="post">
                 <p>
                     <label>Username or Email<span>*</span></label>
-                    <input type="email" required>
+                    <input type="email" name="email" required>
                 </p>
                 <p>
                     <label>Password<span>*</span></label>
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                 </p>
                 <p>
                     <label>
-                        <a href="pass-reset.html">Forgot password?</a>
-                        <a href="registration.html">Create an account</a>
+                        <a asp-action="Signup">Create an account</a>
                     </label>
                     <input type="submit" value="Log In" />
                 </p>
