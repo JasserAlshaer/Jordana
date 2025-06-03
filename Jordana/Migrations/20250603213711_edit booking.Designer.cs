@@ -3,6 +3,7 @@ using System;
 using Jordana.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jordana.Migrations
 {
     [DbContext(typeof(JordanaContext))]
-    partial class JordanaContextModelSnapshot : ModelSnapshot
+    [Migration("20250603213711_edit booking")]
+    partial class editbooking
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -139,19 +141,11 @@ namespace Jordana.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(10)");
 
-                    b.Property<string>("ReferenceName")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
                     b.Property<string>("ReferencePhoneNumber")
                         .IsRequired()
                         .HasMaxLength(10)
                         .IsUnicode(false)
                         .HasColumnType("varchar(10)");
-
-                    b.Property<string>("Relationship")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime");
@@ -166,32 +160,6 @@ namespace Jordana.Migrations
                     b.HasIndex("BookingId");
 
                     b.ToTable("Booking_Members", (string)null);
-                });
-
-            modelBuilder.Entity("Jordana.Models.PaymentCard", b =>
-                {
-                    b.Property<int>("PaymentId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("PaymentId");
-
-                    b.Property<double?>("Balance")
-                        .HasColumnType("double");
-
-                    b.Property<string>("Cvv2")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<DateTime?>("ExpireDate")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Visa")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.HasKey("PaymentId");
-
-                    b.ToTable("PaymentCards");
                 });
 
             modelBuilder.Entity("Jordana.Models.Review", b =>
@@ -371,10 +339,6 @@ namespace Jordana.Migrations
 
                     b.Property<double>("Long")
                         .HasColumnType("double");
-
-                    b.Property<string>("MainImage")
-                        .IsRequired()
-                        .HasColumnType("longtext");
 
                     b.Property<string>("OpeningHours")
                         .HasMaxLength(20)

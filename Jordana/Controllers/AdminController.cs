@@ -37,15 +37,24 @@ namespace Jordana.Controllers
             var data = _mydatabase.Bookings.Include(x => x.Site).Include(r => r.BookingMembers).
                 Select(s => new Booking_View_Modele
                 {
+                    BookingId=s.BookingId,
                     SiteName = s.Site.SiteName,
                     StartDate = ((DateTime)s.BookingDate).ToShortDateString(),
                     Location = s.Site.City,
                     InvitedMembers = s.BookingMembers.Count.ToString(),
-                    TotalPrice = s.Price.ToString()
+                    TotalPrice = s.Price.ToString(),IsAccpted=s.IsAccpted
                 }).ToList();
             return View(data);
         }
 
+        public IActionResult ManageBookingStatus(int Id , bool value)
+        {
+            var item = _mydatabase.Bookings.FirstOrDefault(x => x.BookingId== Id);
+            item.IsAccpted = value;
+            _mydatabase.Update(item);
+            _mydatabase.SaveChanges();
+            return RedirectToAction("ManageBooking");
+        }
         public IActionResult GetBookingDetails()
         {
             return View();

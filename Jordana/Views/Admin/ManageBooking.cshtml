@@ -25,7 +25,13 @@
 								<th class="d-none d-xl-table-cell">Location</th>
 								<th>Invited Members</th>
 								<th class="d-none d-md-table-cell">Total Price</th>
-								<th class="d-none d-md-table-cell">Action</th>
+										<th>Is Accepted</th>
+								
+								<th>Action</th>
+
+							
+						
+
 							</tr>
 						</thead>
 						<tbody>
@@ -36,10 +42,12 @@
 								<td class="d-none d-xl-table-cell">@item.Location</td>
 								<td><span class="badge bg-success">@item.InvitedMembers</span></td>
 								<td class="d-none d-md-table-cell">@item.TotalPrice </td>
+									<td class="d-none d-md-table-cell">@item.IsAccpted </td>
+
 								<td>
-									<a class="btn btn-outline-success" style="float:left; margin-left:12px;" >Approve</a>
+										<a class="btn btn-outline-success" style="float:left; margin-left:12px;" asp-action="ManageBookingStatus" asp-route-Id="@item.BookingId" asp-route-value="true">Approve</a>
 									<a class="btn btn-outline-info" style="margin-left:12px;" asp-action="GetBookingDetails">Get details</a>
-									<a class="btn btn-outline-danger" style="margin-left:12px;" >Reject</a>
+										<a class="btn btn-outline-danger" style="margin-left:12px;" asp-action="ManageBookingStatus" asp-route-Id="@item.BookingId" asp-route-value="false">Reject</a>
 								</td>
 							</tr>
 							}

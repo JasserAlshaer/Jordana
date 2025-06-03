@@ -7,5 +7,7 @@
         public string Location { get; set; }
         public string InvitedMembers { get; set; }
         public string TotalPrice { get; set; }
+        public bool? IsAccpted { get; set; }
+        public int BookingId { get; set; }
     }
 }
