@@ -47,10 +47,10 @@
 									
 								<td>@item.OpeningHours</td>
 								<td>
-									<a class="btn btn-outline-info" style="float:left; margin-left:12px;">Show Details</a>
-									<a class="btn btn-outline-success" style="float:left; margin-left:12px;">View Details</a>
-									<a class="btn btn-outline-warning" style="margin-left:12px;">Edit</a>
-									<a class="btn btn-outline-danger" style="margin-left:12px;">Disable</a>
+										<a class="btn btn-outline-info" style="float:left; margin-left:12px;" asp-action="RejectBooking" asp-route-SiteId="@item.SiteId">Show Details</a>
+										<a class="btn btn-outline-success" style="float:left; margin-left:12px;" asp-action="RejectBooking" asp-route-SiteId="@item.SiteId">View Details</a>
+										<a class="btn btn-outline-warning" style="margin-left:12px;" asp-action="RejectBooking" asp-route-SiteId="@item.SiteId">Edit</a>
+										<a class="btn btn-outline-danger" style="margin-left:12px;" asp-action="RejectBooking" asp-route-SiteId="@item.SiteId">Disable</a>
 								</td>
 
 							</tr>

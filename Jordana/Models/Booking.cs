@@ -22,9 +22,10 @@ namespace Jordana.Models
         public DateTime BookingEndDate { get; set; }
         public double Price { get; set; }
         public string Transportation { get; set; } = null!;
-
+        public bool? IsAccpted { get; set; }
         public virtual TouristsSite Site { get; set; } = null!;
         public virtual User User { get; set; } = null!;
         public virtual ICollection<BookingMember> BookingMembers { get; set; }
+    
     }
 }
