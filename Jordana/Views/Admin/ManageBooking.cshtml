@@ -46,7 +46,7 @@
 
 								<td>
 										<a class="btn btn-outline-success" style="float:left; margin-left:12px;" asp-action="ManageBookingStatus" asp-route-Id="@item.BookingId" asp-route-value="true">Approve</a>
-									<a class="btn btn-outline-info" style="margin-left:12px;" asp-action="GetBookingDetails">Get details</a>
+										<a class="btn btn-outline-info" style="margin-left:12px;" asp-action="GetBookingDetails" asp-route-Id="@item.BookingId">Get details</a>
 										<a class="btn btn-outline-danger" style="margin-left:12px;" asp-action="ManageBookingStatus" asp-route-Id="@item.BookingId" asp-route-value="false">Reject</a>
 								</td>
 							</tr>

@@ -55,9 +55,14 @@ namespace Jordana.Controllers
             _mydatabase.SaveChanges();
             return RedirectToAction("ManageBooking");
         }
-        public IActionResult GetBookingDetails()
+        public IActionResult GetBookingDetails(int Id)
         {
-            return View();
+            var data = _mydatabase.Bookings.Where(x=>x.BookingId==Id)
+                .Include(u => u.User)
+                .Include(x => x.Site).Include(r => r.BookingMembers)
+                .FirstOrDefault();
+
+            return View(data);
         }
 
         public IActionResult ManageUsers()

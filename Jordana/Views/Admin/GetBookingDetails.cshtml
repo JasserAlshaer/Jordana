@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Booking;
+@{
    
     Layout = "_LayoutAdmin";
     ViewData["Title"] = "GetBookingDetails";
@@ -13,37 +14,31 @@
                         <h2 class="text-center mb-4">Booking Form</h2>
                         <form>
                             <div class="row">
-                                <div class="mb-3 col-md-6">
+                                <div class="mb-3 col-md-12">
                                     <label class="form-label">Site Name</label>
-                                    <input class="form-control form-control-lg" type="text" name="siteName" required />
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label class="form-label">Members</label>
-                                    <input class="form-control form-control-lg" type="text" name="members" required />
+                                    <input class="form-control form-control-lg" readonly type="text" value="@Model.Site.SiteName" name="siteName" required />
                                 </div>
 
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Booking Date</label>
-                                    <input class="form-control form-control-lg" type="date" name="bookingDate" required />
+                                    <input class="form-control form-control-lg" readonly type="text" value="@Model.BookingDate"  name="bookingDate" required />
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Execution Time</label>
-                                    <input class="form-control form-control-lg" type="time" name="executionTime" required />
+                                    <input class="form-control form-control-lg" readonly type="text" value="@Model.BookingEndDate" name="executionTime" required />
                                 </div>
 
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Number of Tickets</label>
-                                    <input class="form-control form-control-lg" type="number" name="ticketCount" min="1" required />
+                                    <input class="form-control form-control-lg" readonly type="number" value="@Model.BookingMembers.Count" name="ticketCount" min="1" required />
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label class="form-label">Total Price</label>
-                                    <input class="form-control form-control-lg" type="number" name="totalPrice" min="0" step="0.01" required />
+                                    <input class="form-control form-control-lg" readonly type="number" value="@Model.Price" name="totalPrice" min="0" step="0.01" required />
                                 </div>
                             </div>
 
-                            <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-primary px-5">Submit Booking</button>
-                            </div>
+                           
 
                         </form>
                     </div>
@@ -62,24 +57,38 @@
                         <table class="table table-hover">
                             <thead>
                                 <tr>
-                                    <th>User Name</th>
-                                    <th class="d-none d-xl-table-cell">Submission Time</th>
-                                    <th class="d-none d-xl-table-cell">Comment</th>
-                                    <th>Rate</th>
-                                    <th class="d-none d-md-table-cell">Site Name</th>
-                                    <th>Action</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Gender</th>
+                                    <th scope="col">Age</th>
+                                    <th scope="col">National ID / Passport Number</th>
+                                    <th scope="col">Phone Number</th>
+                                    <th scope="col">Reference Name</th>
+                                    <th scope="col">Reference Phone Number</th>
+                                    <th scope="col">Relationship</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Leen Omar</td>
-                                    <td class="d-none d-xl-table-cell">21/9/2025</td>
-                                    <td class="d-none d-xl-table-cell">Add Comment</td>
-                                    <td>5 Stars</td>
-                                    <td class="d-none d-md-table-cell">Petra</td>
-                                    <td><button class="btn btn-danger btn-sm">Delete</button></td>
-                                </tr>
-                                <!-- Add dynamic rows here later -->
+                                @foreach (var item in Model.BookingMembers)
+                                {
+                                    <tr>
+                                        <th scope="row">@item.Name</th>
+                                        <td>@item.Gender</td>
+                                        <td>@item.Age</td>
+                                        @if (item.NationalId == "")
+                                        {
+                                            <td>@item.PassportNumber</td>
+                                        }
+                                        else
+                                        {
+                                            <td>@item.NationalId</td>
+                                        }
+
+                                        <td>@item.PhoneNumber</td>
+                                        <td>@item.ReferenceName</td>
+                                        <td>@item.ReferencePhoneNumber</td>
+                                        <td>@item.Relationship</td>
+                                    </tr>
+                                }
                             </tbody>
                         </table>
                     </div>
@@ -101,19 +110,16 @@
                                          height="60" />
                                     <div>
                                         <h6 class="fw-bold text-primary mb-1">
-                                            Lily Coleman
+                                            @Model.User.Username
                                         </h6>
                                         <p class="text-muted small mb-0">
-                                            Shared publicly - Jan 2020
+                                            @Model.User.Email
                                         </p>
                                     </div>
                                 </div>
 
                                 <p class="mt-3 mb-4 pb-2">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                    consequat.
+                                    @Model.SpecialRequest
                                 </p>
 
                                
