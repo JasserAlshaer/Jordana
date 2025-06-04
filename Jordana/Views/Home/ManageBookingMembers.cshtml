@@ -197,7 +197,8 @@
 					<h5 class="fw-bold">Credit Card Payment</h5>
 				</div>
 
-				<form>
+                <form asp-action="Checkout" method="post">
+                    <input type="hidden" name="bookingId" value="@id" />
 					<!-- Cardholder Name -->
 					<div class="form-floating mb-3">
 						<input type="text" name="name" class="form-control" id="cardName" placeholder="Cardholder Name" required>

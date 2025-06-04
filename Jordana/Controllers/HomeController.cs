@@ -380,7 +380,7 @@ namespace Jordana.Controllers
                     
                 
             }
-            return View("MyReserviations");
+            return RedirectToAction("MyReserviations");
         }
 
         public async Task<IActionResult> Logout()
