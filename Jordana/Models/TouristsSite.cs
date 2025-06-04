@@ -25,6 +25,7 @@ namespace Jordana.Models
         public string SiteLocation { get; set; } = null!;
         public double Lat { get; set; }
         public double Long { get; set; }
+        public int CategoryId { get; set; }
         public string Category { get; set; } = null!;
         public string? EntryFee { get; set; }
         public string? OpeningHours { get; set; }

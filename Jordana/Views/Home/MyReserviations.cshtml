@@ -1,0 +1,88 @@
+﻿@using Jordana.DTOs
+@model List<Booking_View_Modele>
+
+@{
+	ViewData["Title"] = "Manage Booking";
+	
+}
+
+<style>
+	.btn-primary:hover {
+		color: #b88e5d !important;
+		background-color: #fff !important;
+		border-color: #b88e5d !important;
+	}
+</style>
+
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb"
+	 style="background-image:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)),url('https://i0.wp.com/www.touristjordan.com/wp-content/uploads/2022/05/shutterstock_1030695895-scaled.jpg?resize=2000%2C800&ssl=1'); background-size: cover; background-position: center;">
+	<div class="container text-center py-5" style="max-width: 900px;">
+		<h3 class="text-white display-3 mb-4">My Reservations</h3>
+		<ol class="breadcrumb justify-content-center mb-0">
+			<li class="breadcrumb-item active text-white">Manage Your Bookings</li>
+		</ol>
+	</div>
+</div>
+<!-- Header End -->
+<!-- Table + Actions Start -->
+<div class="container-fluid py-4">
+	<div style="text-align: right;">
+		<a class="btn btn-primary text-white py-3"  style="margin-bottom: 10px;" asp-action="Logout">Logout</a>
+	
+	</div>
+
+	<div class="card">
+		<div class="card-header bg-light">
+			<h5 class="card-title mb-0 fw-bold">Latest Bookings</h5>
+		</div>
+		<div class="table-responsive">
+			<table class="table table-bordered table-striped table-hover mb-0">
+				<thead style="background-color: #b88e5d; color: white;">
+					<tr>
+						<th>Tourist Site</th>
+						<th class="d-none d-xl-table-cell">Start Date</th>
+						<th class="d-none d-xl-table-cell">Location</th>
+						<th>Invited Members</th>
+						<th class="d-none d-md-table-cell">Total Price</th>
+						<th class="d-none d-md-table-cell">Is Accepted</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					@if (Model != null && Model.Any())
+					{
+						foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.SiteName</td>
+								<td class="d-none d-xl-table-cell">@item.StartDate</td>
+								<td class="d-none d-xl-table-cell">@item.Location</td>
+								<td><span class="badge bg-success">@item.InvitedMembers</span></td>
+								<td class="d-none d-md-table-cell">@item.TotalPrice JOD</td>
+								<td class="d-none d-md-table-cell">
+									@if (item.IsAccpted==true)
+									{
+										<span class="badge bg-success">Accepted</span>
+									}
+									else
+									{
+										<span class="badge bg-warning text-dark">Pending</span>
+									}
+								</td>
+								
+							</tr>
+						}
+					}
+					else
+					{
+						<tr>
+							<td colspan="7" class="text-center">No bookings found.</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- Table End -->

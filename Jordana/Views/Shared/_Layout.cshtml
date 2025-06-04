@@ -66,13 +66,18 @@
                     }
                     else
                     {
-                        <div class="dropdown">
-                            <a asp-action="Dashboard" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i class="fa fa-home me-2"></i> My Dashboard</small></a>
-                            <div class="dropdown-menu rounded">
-                                <a asp-action="Profile" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-user-alt me-2"></i> My Profile</a>
-                                <a href="#" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'"><i class="fas fa-power-off me-2"></i> Log Out</a>
-                            </div>
-                        </div>
+                        <!-- ✅ Logged In: Show My Reservations & Logout -->
+                        <a asp-action="MyReserviations" asp-controller="Home">
+                            <small class="me-3 text-light">
+                                <i class="fas fa-calendar-check me-2"></i> My Reservations
+                            </small>
+                        </a>
+
+                        <a asp-action="Logout" asp-controller="Home">
+                            <small class="me-3 text-light">
+                                <i class="fas fa-sign-out-alt me-2"></i> Logout
+                            </small>
+                        </a>
                     }
                    
                 </div>
@@ -188,7 +193,7 @@
 
                     }
                 </div>
-                <a asp-action="Booking" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" style="background-color: #b88e5d; border-color: #b88e5d; color: #fff;">Book Now</a>
+                <a asp-action="Destination" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" style="background-color: #b88e5d; border-color: #b88e5d; color: #fff;">Book Now</a>
             </div>
         </nav>
 

@@ -109,9 +109,11 @@ namespace Jordana.Controllers
 
 
 
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            return RedirectToAction("Index","Home");
+            HttpContext.Session.Remove("UserId");
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult SupportMessage()
 

@@ -4,7 +4,8 @@
 *@
 @{
 	ViewData["Title"] = "Manage Booking Members";
-	ViewData["Profile"] = "Customer";
+	
+	var id = ViewBag.Id;
 }
 <style>
 	.btn-primary:hover {
@@ -73,143 +74,156 @@
 
 <!--Create Booking Member-->
 <div class="modal fade bd-example-modal-lg" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="myLargeModalLabel">Add Booking Member</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<div class="row">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content shadow-lg">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="addBookingMemberLabel">Add Booking Member</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
 
-					<div class="col-lg-12">
-						<h1 class="text-white mb-3">Booking Form</h1>
-						<form>
-							<div class="row g-3">
-								<div class="col-md-6">
-									<div class="form-floating">
-										<input type="text" class="form-control bg-white border-0" id="name" placeholder="Member Name">
-										<label for="name">Member Name</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-floating">
-										<input type="number" class="form-control bg-white border-0" id="email" placeholder="Member Age">
-										<label for="Age">Member Age</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-floating">
-										<input type="text" class="form-control bg-white border-0" id="email" placeholder="Member National Number">
-										<label for="Age">Member National Number</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-floating">
-										<input type="text" class="form-control bg-white border-0" id="name" placeholder="Member Phone Number">
-										<label for="name">Member Phone Number</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-floating">
-										<input type="text" class="form-control bg-white border-0" id="name" placeholder="Member Reference Name">
-										<label for="name">Member Reference Name</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-floating">
-										<input type="text" class="form-control bg-white border-0" id="name" placeholder="Member Reference Phone Number">
-										<label for="name">Member Reference Phone Number</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-floating">
-										<select class="form-select bg-white border-0" id="select1">
-											<option value="Male">Male</option>
-											<option value="Female">Female</option>
-										</select>
-										<label for="select1">Gender</label>
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="form-floating">
-										<select class="form-select bg-white border-0" id="SelectPerson">
-											<option value="Family">Family</option>
-											<option value="Friend">Friend</option>
-											<option value="Sibling">Sibling</option>
-											<option value="Parents">Parents</option>
-											<option value="Others">Others</option>
-										</select>
-										<label for="SelectPerson">Relationship</label>
-									</div>
-								</div>
-								<div class="form-check form-switch">
-									<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
-									<label class="form-check-label" for="flexSwitchCheckDefault">Is Jordanian</label>
-								</div>
+            <div class="modal-body px-4">
+                <form asp-action="AddBookingMember" method="post">
+                    <input type="hidden" name="bookingId" value="@id" />
+                    <div class="row g-3">
 
-								<div class="col-12">
-									<button class="btn btn-primary text-white w-100 py-3" type="submit">Save Member</button>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+                        <!-- Member Name -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control bg-white border-0" id="memberName" name="name" placeholder="Member Name" required>
+                                <label for="memberName">Member Name</label>
+                            </div>
+                        </div>
+
+                        <!-- Member Age -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="number" class="form-control bg-white border-0" id="memberAge" name="age" placeholder="Member Age" required>
+                                <label for="memberAge">Member Age</label>
+                            </div>
+                        </div>
+
+                        <!-- National Number -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control bg-white border-0" id="nationalId" name="nationalId" placeholder="National ID" required>
+                                <label for="nationalId">National Number</label>
+                            </div>
+                        </div>
+
+                        <!-- Phone Number -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control bg-white border-0" id="phone" name="phone" placeholder="Phone Number" required>
+                                <label for="phone">Phone Number</label>
+                            </div>
+                        </div>
+
+                        <!-- Reference Name -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control bg-white border-0" id="referenceName" name="referenceName" placeholder="Reference Name">
+                                <label for="referenceName">Reference Name</label>
+                            </div>
+                        </div>
+
+                        <!-- Reference Phone -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control bg-white border-0" id="referencePhone" name="referencePhone" placeholder="Reference Phone">
+                                <label for="referencePhone">Reference Phone</label>
+                            </div>
+                        </div>
+
+                        <!-- Gender -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-select bg-white border-0" id="gender" name="gender" required>
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                                <label for="gender">Gender</label>
+                            </div>
+                        </div>
+
+                        <!-- Relationship -->
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-select bg-white border-0" id="relationship" name="relationship" required>
+                                    <option value="" selected disabled>Select</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Friend">Friend</option>
+                                    <option value="Sibling">Sibling</option>
+                                    <option value="Parents">Parents</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                                <label for="relationship">Relationship</label>
+                            </div>
+                        </div>
+
+                        <!-- Is Jordanian Switch -->
+                        <div class="col-md-6">
+                            <div class="form-check form-switch mt-3 ps-4">
+                                <input class="form-check-input" type="checkbox" name="isJordanian" id="isJordanian">
+                                <label class="form-check-label fw-bold" for="isJordanian">Is Jordanian</label>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="col-12 mt-3">
+                            <button type="submit" class="btn btn-primary w-100 py-3 rounded-pill fw-bold">
+                                <i class="fa fa-user-plus me-2"></i>Save Member
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
-<!--Checkout and Payment-->
+<!-- Checkout and Payment Modal -->
 <div class="modal fade bd-example-modal-lg-2" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="myLargeModalLabel">Checkout and Payment</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	<div class="modal-dialog modal-lg modal-dialog-centered">
+		<div class="modal-content shadow-lg">
+			<div class="modal-header bg-primary text-white">
+				<h5 class="modal-title" id="checkoutLabel">Checkout and Payment</h5>
+				<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
-			<div class="modal-body">
-				<div style="text-align: right;">
-					<i class="fa fa-close close" data-bs-dismiss="modal" style="font-size: 21px; cursor: pointer;"></i>
+
+			<div class="modal-body px-4">
+				<div class="text-center mb-4">
+					<h5 class="fw-bold">Credit Card Payment</h5>
 				</div>
 
-				<div style="margin-top: 1.5rem; margin-left: 1.5rem; margin-right: 1.5rem;">
-					<div style="text-align: center;">
-						<h5>Credit card</h5>
+				<form>
+					<!-- Cardholder Name -->
+					<div class="form-floating mb-3">
+						<input type="text" name="name" class="form-control" id="cardName" placeholder="Cardholder Name" required>
+						<label for="cardName">Cardholder Name</label>
 					</div>
-					<div class="form" style="margin-top: 1rem;">
-						<div class="inputbox" style="position: relative; margin-bottom: 20px; width: 100%;">
-							<input type="text" name="name" class="form-control" required="required"
-								   style="border-bottom: 1px solid #eee; border: none; font-weight: 600;">
-							<span style="position: absolute; top: 7px; left: 11px; transition: 0.5s;">Cardholder Name</span>
-						</div>
 
-						<div class="inputbox" style="position: relative; margin-bottom: 20px; width: 100%;">
-							<input type="text" name="card" class="form-control" required="required"
-								   style="border-bottom: 1px solid #eee; border: none; font-weight: 600;">
-							<span style="position: absolute; top: 7px; left: 11px; transition: 0.5s;">Card Number</span>
-							<i class="fa fa-eye" style="position: absolute; top: 13px; right: 8px; transition: 0.5s; color: #3F51B5;"></i>
-						</div>
-
-						<div class="d-flex flex-row">
-							<div class="inputbox" style="position: relative; margin-bottom: 20px; width: 100%; margin-right: 10px;">
-								<input type="text" name="exp" class="form-control" required="required"
-									   style="border-bottom: 1px solid #eee; border: none; font-weight: 600;">
-								<span style="position: absolute; top: 7px; left: 11px; transition: 0.5s;">Expiration Date</span>
-							</div>
-
-							<div class="inputbox" style="position: relative; margin-bottom: 20px; width: 100%;">
-								<input type="text" name="cvv" class="form-control" required="required"
-									   style="border-bottom: 1px solid #eee; border: none; font-weight: 600;">
-								<span style="position: absolute; top: 7px; left: 11px; transition: 0.5s;">CVV</span>
-							</div>
-						</div>
-
-						<div class="pay" style="padding-left: 3rem; padding-right: 3rem;">
-							<button class="btn btn-primary btn-block" style="height: 47px; border-radius: 37px;">Pay Now</button>
-						</div>
+					<!-- Card Number -->
+					<div class="form-floating mb-3 position-relative">
+						<input type="text" name="card" class="form-control" id="cardNumber" placeholder="Card Number" required>
+						<label for="cardNumber">Card Number</label>
+						<i class="fa fa-credit-card position-absolute top-50 end-0 translate-middle-y me-3 text-muted"></i>
 					</div>
-				</div>
+
+					<!-- CVV Only -->
+					<div class="form-floating mb-4">
+						<input type="text" name="cvv" class="form-control" id="cvv" placeholder="CVV" required>
+						<label for="cvv">CVV</label>
+					</div>
+
+					<!-- Pay Button -->
+					<div class="d-grid">
+						<button type="submit" class="btn btn-primary rounded-pill py-2 fw-bold">
+							<i class="fa fa-lock me-2"></i>Pay Now
+						</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

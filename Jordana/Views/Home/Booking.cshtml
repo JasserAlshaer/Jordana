@@ -1,7 +1,7 @@
 @model Jordana.Models.TouristsSite;
 @{
     ViewData["Title"] = "Booking";
-    ViewData["Profile"] = "Guest";
+   
 }
 
 <div b-ho1eqyux90="" class="container-fluid position-relative p-0">
@@ -16,7 +16,7 @@
     </style>
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb" style="background-image:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)),url('https://i0.wp.com/www.touristjordan.com/wp-content/uploads/2022/05/shutterstock_1030695895-scaled.jpg?resize=2000%2C800&ssl=1') ; background-size: cover; background-position: center;">
+    <div class="container-fluid bg-breadcrumb" style="background-image:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)),url('https://capstone.zero1planet.com/uploads/topbanner.png') ; background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h3 class="text-white display-3 mb-4">@Model.SiteName</h3>
             <ol class="breadcrumb justify-content-center mb-0">
@@ -152,71 +152,83 @@
                 </div>
                 <div class="col-lg-6">
                     <h1 class="text-white mb-3">Booking Form</h1>
-                    <form>
+                    <form id="bookingForm" method="post" asp-action="Booking" asp-controller="Home" >
+                        <input type="hidden" name="siteId" value="@Model.SiteId" />
                         <div class="row g-3">
+                            <!-- Booking Start Date -->
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control bg-white border-0" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                                    <input type="datetime-local" class="form-control bg-white border-0" id="bookingDate" name="bookingDate" placeholder="Booking Date">
+                                    <label for="bookingDate">Booking Date</label>
                                 </div>
                             </div>
+
+                            <!-- Booking End Date -->
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control bg-white border-0" id="email" placeholder="Your Email">
-                                    <label for="email">Your Email</label>
+                                    <input type="datetime-local" class="form-control bg-white border-0" id="bookingEndDate" name="bookingEndDate" placeholder="Booking End Date">
+                                    <label for="bookingEndDate">Booking End Date</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-floating date" id="date3" data-target-input="nearest">
-                                    <input type="text" class="form-control bg-white border-0" id="datetime" placeholder="Date &amp; Time" data-target="#date3" data-toggle="datetimepicker">
-                                    <label for="datetime">Date &amp; Time</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
+
+                            <!-- Transportation -->
+                            <div class="col-md-12">
                                 <div class="form-floating">
-                                    <select class="form-select bg-white border-0" id="select1">
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 2</option>
-                                        <option value="3">Destination 3</option>
+                                    <select class="form-select bg-white border-0" id="transporation" name="transporation">
+                                        <option value="" selected disabled>Select</option>
+                                        <option value="car">Car</option>
+                                        <option value="bus">Tourist Bus</option>
+                                        <option value="none">No Transportation</option>
                                     </select>
-                                    <label for="select1">Destination</label>
+                                    <label for="transporation">Transportation</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select bg-white border-0" id="SelectPerson">
-                                        <option value="1">Persons 1</option>
-                                        <option value="2">Persons 2</option>
-                                        <option value="3">Persons 3</option>
-                                    </select>
-                                    <label for="SelectPerson">Persons</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-select bg-white border-0" id="CategoriesSelect">
-                                        <option value="1">Kids</option>
-                                        <option value="2">1</option>
-                                        <option value="3">2</option>
-                                        <option value="3">3</option>
-                                    </select>
-                                    <label for="CategoriesSelect">Categories</label>
-                                </div>
-                            </div>
+
+                            <!-- Special Request -->
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control bg-white border-0" placeholder="Special Request" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Special Request</label>
+                                    <textarea class="form-control bg-white border-0" id="SpecialRequest" name="SpecialRequest" placeholder="Special Request" style="height: 100px"></textarea>
+                                    <label for="SpecialRequest">Special Request</label>
                                 </div>
                             </div>
+
+                            <!-- Submit -->
                             <div class="col-12">
-                                <button class="btn btn-primary text-white w-100 py-3" type="submit">Book Now</button>
+                                <button type="submit" class="btn btn-primary text-white w-100 py-3">Book Now</button>
                             </div>
                         </div>
                     </form>
+                    
+
                 </div>
             </div>
         </div>
     </div>
     <!--Booking End -->
 </div>
+<script>
+    document.getElementById("bookingForm").addEventListener("submit", function (e) {
+        const bookingDate = new Date(document.getElementById("bookingDate").value);
+        const bookingEndDate = new Date(document.getElementById("bookingEndDate").value);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0); // ignore time portion
+
+        if (bookingDate <= today) {
+            alert("Booking date must be after today.");
+            e.preventDefault();
+            return;
+        }
+
+        if (bookingEndDate <= bookingDate) {
+            alert("End date must be after the booking start date.");
+            e.preventDefault();
+            return;
+        }
+
+        const trans = document.getElementById("transporation").value;
+        if (!["car", "bus", "none"].includes(trans)) {
+            alert("Please select a valid transportation option.");
+            e.preventDefault();
+        }
+    });
+</script>

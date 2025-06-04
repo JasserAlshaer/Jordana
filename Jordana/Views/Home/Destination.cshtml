@@ -2,7 +2,7 @@
 @model Tuple<List<TouristsSite>, List<CategoryDTO>>;
 @{
     ViewData["Title"] = "Destination";
-    ViewData["Profile"] = "Guest";
+
 }
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
@@ -35,7 +35,7 @@
                 {
                     @* var category = item; *@
                     <li class="nav-item">
-                        <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-@item.Name">
+                        <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill" href="#tab-@item.CategoryId">
                             <span class="text-dark" style="width: 150px;">@item.Name</span>
                         </a>
                     </li>
@@ -59,7 +59,11 @@
                                                 <a href="#" class="btn-hover text-white">@item.City - @item.Region<i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
-                                                <a href="~/usertemplate/img/destination-1.jpg" data-lightbox="destination-1"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                                <a asp-action="Booking" asp-route-Id="@item.SiteId"  class="btn btn-light btn-lg-square text-primary" title="Open Booking">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M6.364 1.5a.5.5 0 0 1 .5-.5h7.636a.5.5 0 0 1 .5.5v7.636a.5.5 0 0 1-1 0V3.207L2.854 13.854a.5.5 0 1 1-.708-.708L13.293 2.5H6.864a.5.5 0 0 1-.5-.5z" />
+                                                    </svg>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +77,7 @@
                 {
                     var category = Model.Item2[i];
                     var sites = Model.Item1.Where(s => s.Region == category.Name).ToList();
-                    <div id="tab-@category.Name" class="tab-pane fade show p-0">
+                    <div id="tab-@category.CategoryId" class="tab-pane fade show p-0">
                         @if(sites.Any())
                         {
                             <div class="row g-4">
@@ -90,7 +94,11 @@
                                                 <a href="#" class="btn-hover text-white">@item.City - @item.Region<i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
-                                                <a href="~/usertemplate/img/destination-1.jpg" data-lightbox="destination-1"><i class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
+                                                <a asp-action="Booking" asp-route-Id="@item.SiteId"  class="btn btn-light btn-lg-square text-primary" title="Open Booking">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M6.364 1.5a.5.5 0 0 1 .5-.5h7.636a.5.5 0 0 1 .5.5v7.636a.5.5 0 0 1-1 0V3.207L2.854 13.854a.5.5 0 1 1-.708-.708L13.293 2.5H6.864a.5.5 0 0 1-.5-.5z" />
+                                                    </svg>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
