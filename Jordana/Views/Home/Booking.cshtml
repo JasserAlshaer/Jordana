@@ -1,7 +1,7 @@
 @model Jordana.Models.TouristsSite;
 @{
     ViewData["Title"] = "Booking";
-   
+
 }
 
 <div b-ho1eqyux90="" class="container-fluid position-relative p-0">
@@ -10,13 +10,13 @@
     <style>
         /* Set fixed size for carousel images */
         .carousel-inner img {
-            height: 400px; /* Adjust this height as needed */
-            object-fit: cover; /* Makes sure the image covers the area nicely */
+        height: 400px; /* Adjust this height as needed */
+        object-fit: cover; /* Makes sure the image covers the area nicely */
         }
     </style>
 
     <!-- Header Start -->
-    <div class="container-fluid bg-breadcrumb" style="background-image:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)),url('https://sdmntprwestus.oaiusercontent.com/files/00000000-ca54-6230-ad7e-4774de2d3537/raw?se=2025-06-07T20%3A00%3A31Z&sp=r&sv=2024-08-04&sr=b&scid=37a5fa8b-1af9-51aa-8dc2-bb93361ccbe3&skoid=ea0c7534-f237-4ccd-b7ea-766c4ed977ad&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-06-07T01%3A00%3A25Z&ske=2025-06-08T01%3A00%3A25Z&sks=b&skv=2024-08-04&sig=jwuN42fP58/9DWAVH1fDDhhaACDAToxG%2Bd1ajMJKQJI%3D') ; background-size: cover; background-position: center;">
+    <div class="container-fluid bg-breadcrumb" style="background-image:linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, 0.5)),url('https://capstone.zero1planet.com/uploads/bestback.jpeg') ; background-size: cover; background-position: center;">
         <div class="container text-center py-5" style="max-width: 900px;">
             <h3 class="text-white display-3 mb-4">@Model.SiteName</h3>
             <ol class="breadcrumb justify-content-center mb-0">
@@ -43,14 +43,22 @@
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" style="max-width: 1500px; margin: auto;">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://universes.art/fileadmin/_migrated/gridelement_uploads/Street-Facades-IMG_0750-2000-850_03.jpg" class="d-block w-100" alt="@Model.SiteName">
+                <img src="https://capstone.zero1planet.com/uploads/bestback.jpeg" class="d-block w-100" alt="@Model.SiteName">
             </div>
-            <div class="carousel-item">
-                <img src="https://i.natgeofe.com/n/5ba0cd81-b859-40a0-93f1-2d26ff6d5ef9/DHHXC2.jpg" class="d-block w-100" alt="@Model.SiteName">
-            </div>
-            <div class="carousel-item">
-                <img src="https://i0.wp.com/www.touristjordan.com/wp-content/uploads/2022/05/shutterstock_1030695895-scaled.jpg?resize=2000%2C800&ssl=1" class="d-block w-100" alt="@Model.SiteName">
-            </div>
+
+            @foreach(var image in Model.SiteMedia)
+            {
+                if (image.Type == "Image")
+                {
+                    <div class="carousel-item">
+
+                        <img src="~/uploads/@image.Url" class="d-block w-100" alt="@Model.SiteName">
+                    </div>
+                    
+                }
+               
+            }
+           
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">

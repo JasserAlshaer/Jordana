@@ -99,55 +99,55 @@
                 <div class="navbar-nav ms-auto py-0">
                     @if (ViewData["Title"]=="Home")
                     {
-                        <a asp-action="Index" class="nav-item nav-link active" style="border-color:#b88e5d;">Home</a>
+                        <a asp-action="Index" class="nav-item nav-link active" style="border-color:#b88e5d;">@_localization.Getkey("Home")</a>
 
                     }
                     else
                     {
-                        <a asp-action="Index" class="nav-item nav-link " style="border-color:#b88e5d;">Home</a>
+                        <a asp-action="Index" class="nav-item nav-link " style="border-color:#b88e5d;">@_localization.Getkey("Home")</a>
 
                     }
                     @if (ViewData["Title"] == "About Us")
                     {
-                        <a asp-action="AboutUs" class="nav-item nav-link active" style="border-color:#b88e5d;">About</a>
+                        <a asp-action="AboutUs" class="nav-item nav-link active" style="border-color:#b88e5d;">@_localization.Getkey("About Us")</a>
 
                     }
                     else
                     {
-                        <a asp-action="AboutUs" class="nav-item nav-link" style="border-color:#b88e5d;">About</a>
+                        <a asp-action="AboutUs" class="nav-item nav-link" style="border-color:#b88e5d;">@_localization.Getkey("About Us")</a>
 
                     }
                     @if (ViewData["Title"] == "Services")
                     {
-                        <a asp-action="Services" class="nav-item nav-link active" style="border-color:#b88e5d;">Services</a>
+                        <a asp-action="Services" class="nav-item nav-link active" style="border-color:#b88e5d;">@_localization.Getkey("Services")</a>
 
                     }
                     else
                     {
-                        <a asp-action="Services" class="nav-item nav-link" style="border-color:#b88e5d;">Services</a>
+                        <a asp-action="Services" class="nav-item nav-link" style="border-color:#b88e5d;">@_localization.Getkey("Services")</a>
 
                     }
 
                     <div class="nav-item dropdown">
                         @if (ViewData["Title"] == "Destination" || ViewData["Title"] == "Booking" || ViewData["Title"] == "Our Guides" || ViewData["Title"] == "Testimonial")
                         {
-                            <a asp-action="Index" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="border-color:#b88e5d;">Pages</a>
+                            <a asp-action="Index" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" style="border-color:#b88e5d;">@_localization.Getkey("Pages")</a>
 
                         }
                         else
                         {
-                            <a asp-action="Index" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="border-color:#b88e5d;">Pages</a>
+                            <a asp-action="Index" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="border-color:#b88e5d;">@_localization.Getkey("Pages")</a>
 
                         }
                         <div class="dropdown-menu m-0">
                             @if (ViewData["Title"] == "Destination")
                             {
-                                <a asp-action="Destination" class="dropdown-item active" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Destination</a>
+                                <a asp-action="Destination" class="dropdown-item active" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">@_localization.Getkey("Destination")</a>
 
                             }
                             else
                             {
-                                <a asp-action="Destination" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Destination</a>
+                                <a asp-action="Destination" class="dropdown-item" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">@_localization.Getkey("Destination")</a>
 
                             }
                             @if (ViewData["Title"] == "Booking" && ViewData["Profile"] == "Customer")
@@ -235,18 +235,28 @@
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item">
                         <div class="row gy-3 gx-2 mb-4">
-                            <div class="col-xl-6">
-                                <form>
-                                    <div class="form-floating">
-                                        <select class="form-select text-white" style="background-color: var(--bs-primary)" id="select1">
-                                            <option value="1">Arabic</option>
-                                            <option value="2">English</option>
-                                        </select>
-                                        <label for="select1" style="color: var(--bs-dark)">Language</label>
-                                    </div>
-                                </form>
+                            <div class="col-xl-8">
+                                    <form>
+                                        <div class="form-floating">
+                                            <select class="form-select text-white" style="background-color: var(--bs-primary)" id="languageSelect">
+                                                <option value="" selected >Select Language</option>
+                                                <option value="ar-AR">English</option>
+                                                <option value="en-US">Arabic</option>
+
+                                            </select>
+                                            <label for="languageSelect" style="color: var(--bs-dark)">Language</label>
+                                        </div>
+                                    </form>
+
                             </div>
-                            <div class="col-xl-6">
+                                <script>
+                                    document.getElementById("languageSelect").addEventListener("change", function () {
+                                        const selectedCulture = this.value;
+                                        window.location.href = `/Home/ChangeLanguage?culture=${selectedCulture}`;
+                                    });
+                                </script>
+
+                            <div class="col-xl-4">
                                 <form>
                                     <div class="form-floating">
                                         <select class="form-select text-white" style="background-color: var(--bs-primary)" id="select1">
