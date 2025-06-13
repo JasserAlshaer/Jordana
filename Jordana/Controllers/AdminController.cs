@@ -81,35 +81,31 @@ namespace Jordana.Controllers
         }
         [HttpPost]
        
-        public async Task<IActionResult> Edit(int id, [Bind("CreationDate,UpdateDate,CreatedBy,UpdatedBy,SiteId,SiteName,SiteDescription,City,Region,SiteLocation,Lat,Long,CategoryId,Category,EntryFee,OpeningHours")] TouristsSite touristsSite)
+        public async Task<IActionResult> Edit(int SiteId,string SiteName, string SiteDescription, string City, string Region, string SiteLocation, string Lat, string Long, string EntryFee, string OpeningHours)
         {
-            if (id != touristsSite.SiteId)
+            if (SiteId == 0)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            var item =await  _mydatabase.TouristsSites.Where(x=>x.SiteId==SiteId).FirstOrDefaultAsync();
+            if (item != null)
             {
-                try
-                {
-                    _mydatabase.Update(touristsSite);
-                    await _mydatabase.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TouristsSiteExists(touristsSite.SiteId))
+                item.SiteName = SiteName;
+                item.SiteDescription = SiteDescription;
+                item.City = City;
+                item.Region = Region;
+                item.SiteLocation = SiteLocation;
+                item.Lat = Convert.ToDouble(Lat);
+                item.Long = Convert.ToDouble(Long);
+                item.EntryFee =EntryFee;
+                item.OpeningHours = OpeningHours;
 
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                _mydatabase.TouristsSites.Update(item);
+                _mydatabase.SaveChanges();
             }
-            return View(touristsSite);
+
+            return RedirectToAction("ManageDestinations");
+
         }
         private bool TouristsSiteExists(int id)
         {
