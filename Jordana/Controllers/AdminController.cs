@@ -63,7 +63,7 @@ namespace Jordana.Controllers
             _mydatabase.Update(Site);
             _mydatabase.SaveChanges();
 
-            return RedirectToAction("ManageDestination");
+            return RedirectToAction("ManageDestinations");
         }
         public IActionResult Edit(int? id)
         {
