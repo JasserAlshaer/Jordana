@@ -43,10 +43,78 @@ namespace Jordana.Controllers
                     Location = s.Site.City,
                     InvitedMembers = s.BookingMembers.Count.ToString(),
                     TotalPrice = s.Price.ToString(),IsAccpted=s.IsAccpted
+
                 }).ToList();
+
             return View(data);
         }
+        public IActionResult DisableSitd(int SiteId,int s)
+        {
+            var Site = _mydatabase.TouristsSites.Where(c => c.SiteId==SiteId).FirstOrDefault();
+             if (Site!= null && s==1)
+            {
+                Site.IsActive = false;
+            }
+            else
 
+            {
+                Site.IsActive = true;
+            }
+            _mydatabase.Update(Site);
+            _mydatabase.SaveChanges();
+
+            return RedirectToAction("ManageDestination");
+        }
+        public IActionResult Edit(int? id)
+        {
+            if (id == null || _mydatabase.TouristsSites == null)
+            {
+                return NotFound();
+            }
+
+            var touristsSite = _mydatabase.TouristsSites.Find(id);
+            if (touristsSite == null)
+            {
+                return NotFound();
+            }
+            return View(touristsSite);
+        }
+        [HttpPost]
+       
+        public async Task<IActionResult> Edit(int id, [Bind("CreationDate,UpdateDate,CreatedBy,UpdatedBy,SiteId,SiteName,SiteDescription,City,Region,SiteLocation,Lat,Long,CategoryId,Category,EntryFee,OpeningHours")] TouristsSite touristsSite)
+        {
+            if (id != touristsSite.SiteId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _mydatabase.Update(touristsSite);
+                    await _mydatabase.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TouristsSiteExists(touristsSite.SiteId))
+
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(touristsSite);
+        }
+        private bool TouristsSiteExists(int id)
+        {
+            return (_mydatabase.TouristsSites?.Any(e => e.SiteId == id)).GetValueOrDefault();
+        }
         public IActionResult ManageBookingStatus(int Id , bool value)
         {
             var item = _mydatabase.Bookings.FirstOrDefault(x => x.BookingId== Id);

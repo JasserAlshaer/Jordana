@@ -30,6 +30,7 @@ namespace Jordana.Models
         public string? EntryFee { get; set; }
         public string? OpeningHours { get; set; }
         public string MainImage { get; set; }
+        public bool IsActive { get; set; } = true;
 
         public virtual ICollection<Booking> Bookings { get; set; }
         public virtual ICollection<Review> Reviews { get; set; }
