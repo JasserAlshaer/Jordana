@@ -1,217 +1,204 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Jordana.DTOs
+@model Tuple<DashboardDTO,List<Booking_View_Modele>,List<ChartDTO>>
 @{
 
-	Layout = "_LayoutAdmin";
-	ViewData["Title"] = "Dashboard";
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Dashboard";
 }
 <main class="content">
-	<div class="container-fluid p-0">
+    <div class="container-fluid p-0">
 
-		<h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
+        <h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
 
-		<div class="row">
-			<div class="col-xl-12 col-xxl-12 d-flex">
-				<div class="w-100">
-					<div class="row">
-						<div class="col-sm-6">
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col mt-0">
-											<h5 class="card-title">Booking</h5>
-										</div>
+        <div class="row">
+            <div class="col-xl-12 col-xxl-12 d-flex">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Booking</h5>
+                                        </div>
 
-										<div class="col-auto">
-											<div class="stat text-primary">
-												<i class="align-middle" data-feather="truck"></i>
-											</div>
-										</div>
-									</div>
-									<h1 class="mt-1 mb-3">2.382</h1>
-									
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col mt-0">
-											<h5 class="card-title">Site Visitors</h5>
-										</div>
+                                        <div class="col-auto">
+                                            <div class="stat text-primary">
+                                                <i class="align-middle" data-feather="truck"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="mt-1 mb-3">@Model.Item1.Booking</h1>
 
-										<div class="col-auto">
-											<div class="stat text-primary">
-												<i class="align-middle" data-feather="users"></i>
-											</div>
-										</div>
-									</div>
-									<h1 class="mt-1 mb-3">14.212</h1>
-									
-								</div>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col mt-0">
-											<h5 class="card-title">Tourism Revenue</h5>
-										</div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Site Visitors</h5>
+                                        </div>
 
-										<div class="col-auto">
-											<div class="stat text-primary">
-												<i class="align-middle" data-feather="dollar-sign"></i>
-											</div>
-										</div>
-									</div>
-									<h1 class="mt-1 mb-3">$21.300</h1>
-									
-								</div>
-							</div>
-							<div class="card">
-								<div class="card-body">
-									<div class="row">
-										<div class="col mt-0">
-											<h5 class="card-title">Tour Reguests</h5>
-										</div>
+                                        <div class="col-auto">
+                                            <div class="stat text-primary">
+                                                <i class="align-middle" data-feather="users"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="mt-1 mb-3">@Model.Item1.Users</h1>
 
-										<div class="col-auto">
-											<div class="stat text-primary">
-												<i class="align-middle" data-feather="shopping-cart"></i>
-											</div>
-										</div>
-									</div>
-									<h1 class="mt-1 mb-3">64</h1>
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Tourism Revenue</h5>
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="stat text-primary">
+                                                <i class="align-middle" data-feather="dollar-sign"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="mt-1 mb-3">JD @Model.Item1.Revenue</h1>
+
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col mt-0">
+                                            <h5 class="card-title">Tour Reguests</h5>
+                                        </div>
+
+                                        <div class="col-auto">
+                                            <div class="stat text-primary">
+                                                <i class="align-middle" data-feather="shopping-cart"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h1 class="mt-1 mb-3">@Model.Item1.Orders</h1>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
-		</div>
+        </div>
 
-		<div class="row">
-			<div class="col-12 col-md-12col-xxl-12 d-flex order-2 order-xxl-3">
-				<div class="card flex-fill w-100">
-					<div class="card-header">
+        <div class="row">
+            <div class="col-12 col-md-12col-xxl-12 d-flex order-2 order-xxl-3">
+                <div class="card flex-fill w-100">
+                    <div class="card-header">
 
-						<h5 class="card-title mb-0">Rank</h5>
-					</div>
-					<div class="card-body d-flex">
-						<div class="align-self-center w-100">
-							<div class="py-3">
-								<div class="chart chart-xs">
-									<canvas id="chartjs-dashboard-pie"></canvas>
-								</div>
-							</div>
+                        <h5 class="card-title mb-0">Rank</h5>
+                    </div>
+                    <div class="card-body d-flex">
+                        <div class="align-self-center w-100">
+                            <div class="py-3">
+                                <div class="chart chart-xs">
+                                    <canvas id="chartjs-dashboard-pie"></canvas>
+                                </div>
+                            </div>
 
-							<table class="table mb-0">
-								<tbody>
-									<tr>
-										<td>Aqaba</td>
-										<td class="text-end">4306</td>
-									</tr>
-									<tr>
-										<td>Amman</td>
-										<td class="text-end">3801</td>
-									</tr>
-									<tr>
-										<td>Jarash</td>
-										<td class="text-end">1689</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
+                            <table class="table mb-0">
+                                <tbody>
+                                    @foreach (var item in Model.Item3)
+                                    {
+                                        <tr>
+                                            <td>@item.City</td>
+                                            <td class="text-end">@item.Count</td>
+                                        </tr>
+                                    }
 
-			
-		</div>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-		<div class="row">
-			
-			<div class="col-18 col-lg-16 col-xxl-12 d-flex">
-				<div class="card flex-fill">
-					<div class="card-header">
 
-						<h5 class="card-title mb-0">Latest Booking</h5>
-					</div>
-					<table class="table table-hover my-0">
-						<thead>
-							<tr>
-								<th>Tourist_Sites</th>
-								<th class="d-none d-xl-table-cell">Start Date</th>
-								<th class="d-none d-xl-table-cell">Location</th>
-								<th>Invited Members</th>
-								<th class="d-none d-md-table-cell">Total Price</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>The Roman Theater</td>
-								<td class="d-none d-xl-table-cell">01/01/2021</td>
-								<td class="d-none d-xl-table-cell">Amman</td>
-								<td><span class="badge bg-success">7</span></td>
-								<td class="d-none d-md-table-cell">800 </td>
-							</tr>
-							<tr>
-								<td>Umm Quis</td>
-								<td class="d-none d-xl-table-cell">01/01/2021</td>
-								<td class="d-none d-xl-table-cell">Irbid</td>
-								<td><span class="badge bg-danger">2</span></td>
-								<td class="d-none d-md-table-cell"> 300</td>
-							</tr>
-							<tr>
-								<td>Coral Reefs & Diving</td>
-								<td class="d-none d-xl-table-cell">01/01/2021</td>
-								<td class="d-none d-xl-table-cell">Aqaba</td>
-								<td><span class="badge bg-success">9</span></td>
-								<td class="d-none d-md-table-cell">1200 </td>
-							</tr>
-							<tr>
-								<td>The Mosaic Map in St. George's Church</td>
-								<td class="d-none d-xl-table-cell">01/01/2021</td>
-								<td class="d-none d-xl-table-cell">Madaba</td>
-								<td><span class="badge bg-warning">3</span></td>
-								<td class="d-none d-md-table-cell">500 </td>
-							</tr>
-							<tr>
-								<td> Karak Castle</td>
-								<td class="d-none d-xl-table-cell">01/01/2021</td>
-								<td class="d-none d-xl-table-cell">AL-karak</td>
-								<td><span class="badge bg-success">6</span></td>
-								<td class="d-none d-md-table-cell">900</td>
-							</tr>
-							<tr>
-								<td>Dana Biosphere Reserve</td>
-								<td class="d-none d-xl-table-cell">01/01/2021</td>
-								<td class="d-none d-xl-table-cell">Tafileh</td>
-								<td><span class="badge bg-success">8</span></td>
-								<td class="d-none d-md-table-cell"> 1500</td>
-							</tr>
-							
-							<tr>
-								<td>Ajloun Castle (Qal'at Ar-Rabad)</td>
-								<td class="d-none d-xl-table-cell">01/01/2021</td>
-								<td class="d-none d-xl-table-cell">Ajloun</td>
-								<td><span class="badge bg-warning">2</span></td>
-								<td class="d-none d-md-table-cell">300 </td>
-							</tr>
-							
-						
+        </div>
 
-						
-						</tbody>
-					</table>
-				</div>
-			</div>
+        <div class="row">
 
-		</div>
+            <div class="col-18 col-lg-16 col-xxl-12 d-flex">
+                <div class="card flex-fill">
+                    <div class="card-header">
 
-	</div>
+                        <h5 class="card-title mb-0">Latest Booking</h5>
+                    </div>
+                    <table class="table table-hover my-0">
+                        <thead>
+                            <tr>
+                                <th>Tourist_Sites</th>
+                                <th class="d-none d-xl-table-cell">Start Date</th>
+                                <th class="d-none d-xl-table-cell">Location</th>
+                                <th>Invited Members</th>
+                                <th class="d-none d-md-table-cell">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Item2)
+                            {
+                                <tr>
+                                    <td>@item.SiteName</td>
+                                    <td class="d-none d-xl-table-cell">@item.StartDate</td>
+                                    <td class="d-none d-xl-table-cell">@item.Location</td>
+                                    <td><span class="badge bg-success">@item.InvitedMembers</span></td>
+                                    <td class="d-none d-md-table-cell">@item.TotalPrice </td>
+                                    <td class="d-none d-md-table-cell">@item.IsAccpted </td>
+                                </tr>
+                            }
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
 </main>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const labels = @Html.Raw(JsonConvert.SerializeObject(ViewBag.ChartLabels));
+    const data = @Html.Raw(JsonConvert.SerializeObject(ViewBag.ChartData));
+
+        new Chart(document.getElementById("chartjs-dashboard-pie"), {
+            type: "pie",
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: [
+                        window.theme.primary,
+                        window.theme.warning,
+                        window.theme.danger,
+                        window.theme.success,
+                        window.theme.info,
+                        window.theme.secondary // ألوان إضافية لو في محافظات أكثر
+                    ],
+                    borderWidth: 5
+                }]
+            },
+            options: {
+                responsive: !window.MSInputMethodContext,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                cutoutPercentage: 75
+            }
+        });
+    });
+</script>

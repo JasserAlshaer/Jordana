@@ -18,12 +18,71 @@ namespace Jordana.Controllers
         }
         public IActionResult Dashboard()
         {
-            return View();
+            var data = new DashboardDTO
+            {
+                Booking = _mydatabase.Bookings.Count() + _mydatabase.BookingMembers.Count(),
+                Revenue = _mydatabase.Bookings.Sum(x => x.Price),
+                Orders = _mydatabase.Bookings.Count(),
+                Users = _mydatabase.Users.Count()
+            };
+            var data2 = _mydatabase.Bookings.Include(x => x.Site).Include(r => r.BookingMembers).
+               Select(s => new Booking_View_Modele
+               {
+                   BookingId = s.BookingId,
+                   SiteName = s.Site.SiteName,
+                   StartDate = ((DateTime)s.BookingDate).ToShortDateString(),
+                   Location = s.Site.City,
+                   InvitedMembers = s.BookingMembers.Count.ToString(),
+                   TotalPrice = s.Price.ToString(),
+                   IsAccpted = s.IsAccpted
+
+               }).ToList().OrderByDescending(x => x.StartDate).Take(5).ToList();
+            var bookingsByCity = _mydatabase.Bookings
+              .Include(b => b.Site)
+              .GroupBy(b => b.Site.City)
+              .Select(group => new ChartDTO
+              {
+                  City = group.Key,
+                  Count = group.Count()
+              })
+              .OrderByDescending(x => x.Count)
+              .ToList();
+            ViewBag.ChartLabels = bookingsByCity.Select(x => x.City).ToList();
+            ViewBag.ChartData = bookingsByCity.Select(x => x.Count).ToList();
+
+            return View(Tuple.Create(data, data2, bookingsByCity));
         }
 
         public IActionResult Profile()
         {
-            return View();
+            int? userId = HttpContext.Session.GetInt32("UserId");
+            if (userId != null)
+            {
+                var profile = _mydatabase.Users.FirstOrDefault(x => x.UserId == userId);
+                return View(profile);
+            }
+            return NotFound();
+
+        }
+
+        [HttpPost]
+        public IActionResult UpdatePasswordAdmin(int UserId , string Pass , string nPass)
+        {
+            if (UserId != null)
+            {
+                var profile = _mydatabase.Users.FirstOrDefault(x => x.UserId == UserId);
+                if(profile != null)
+                {
+                    if (Pass.Equals(nPass))
+                    {
+                        profile.Password = nPass;
+                        _mydatabase.Update(profile);
+                        _mydatabase.SaveChanges();
+                    }
+                }
+                return RedirectToAction("Profile");
+            }
+            return RedirectToAction("Index","Home");
         }
 
         public IActionResult ManageDestinations()
@@ -37,21 +96,22 @@ namespace Jordana.Controllers
             var data = _mydatabase.Bookings.Include(x => x.Site).Include(r => r.BookingMembers).
                 Select(s => new Booking_View_Modele
                 {
-                    BookingId=s.BookingId,
+                    BookingId = s.BookingId,
                     SiteName = s.Site.SiteName,
                     StartDate = ((DateTime)s.BookingDate).ToShortDateString(),
                     Location = s.Site.City,
                     InvitedMembers = s.BookingMembers.Count.ToString(),
-                    TotalPrice = s.Price.ToString(),IsAccpted=s.IsAccpted
+                    TotalPrice = s.Price.ToString(),
+                    IsAccpted = s.IsAccpted
 
                 }).ToList();
 
             return View(data);
         }
-        public IActionResult DisableSitd(int SiteId,int s)
+        public IActionResult DisableSitd(int SiteId, int s)
         {
-            var Site = _mydatabase.TouristsSites.Where(c => c.SiteId==SiteId).FirstOrDefault();
-             if (Site!= null && s==1)
+            var Site = _mydatabase.TouristsSites.Where(c => c.SiteId == SiteId).FirstOrDefault();
+            if (Site != null && s == 1)
             {
                 Site.IsActive = false;
             }
@@ -80,14 +140,14 @@ namespace Jordana.Controllers
             return View(touristsSite);
         }
         [HttpPost]
-       
-        public async Task<IActionResult> Edit(int SiteId,string SiteName, string SiteDescription, string City, string Region, string SiteLocation, string Lat, string Long, string EntryFee, string OpeningHours)
+
+        public async Task<IActionResult> Edit(int SiteId, string SiteName, string SiteDescription, string City, string Region, string SiteLocation, string Lat, string Long, string EntryFee, string OpeningHours)
         {
             if (SiteId == 0)
             {
                 return NotFound();
             }
-            var item =await  _mydatabase.TouristsSites.Where(x=>x.SiteId==SiteId).FirstOrDefaultAsync();
+            var item = await _mydatabase.TouristsSites.Where(x => x.SiteId == SiteId).FirstOrDefaultAsync();
             if (item != null)
             {
                 item.SiteName = SiteName;
@@ -97,7 +157,7 @@ namespace Jordana.Controllers
                 item.SiteLocation = SiteLocation;
                 item.Lat = Convert.ToDouble(Lat);
                 item.Long = Convert.ToDouble(Long);
-                item.EntryFee =EntryFee;
+                item.EntryFee = EntryFee;
                 item.OpeningHours = OpeningHours;
 
                 _mydatabase.TouristsSites.Update(item);
@@ -111,9 +171,9 @@ namespace Jordana.Controllers
         {
             return (_mydatabase.TouristsSites?.Any(e => e.SiteId == id)).GetValueOrDefault();
         }
-        public IActionResult ManageBookingStatus(int Id , bool value)
+        public IActionResult ManageBookingStatus(int Id, bool value)
         {
-            var item = _mydatabase.Bookings.FirstOrDefault(x => x.BookingId== Id);
+            var item = _mydatabase.Bookings.FirstOrDefault(x => x.BookingId == Id);
             item.IsAccpted = value;
             _mydatabase.Update(item);
             _mydatabase.SaveChanges();
@@ -121,7 +181,7 @@ namespace Jordana.Controllers
         }
         public IActionResult GetBookingDetails(int Id)
         {
-            var data = _mydatabase.Bookings.Where(x=>x.BookingId==Id)
+            var data = _mydatabase.Bookings.Where(x => x.BookingId == Id)
                 .Include(u => u.User)
                 .Include(x => x.Site).Include(r => r.BookingMembers)
                 .FirstOrDefault();
@@ -131,13 +191,13 @@ namespace Jordana.Controllers
 
         public IActionResult ManageUsers()
         {
-            var items = _mydatabase.Users.Where(c=>c.UserType== "User").Select(x => new UserViewModel
+            var items = _mydatabase.Users.Where(c => c.UserType == "User").Select(x => new UserViewModel
             {
                 UserName = x.Username,
                 JoinDate = ((DateTime)x.CreationDate).ToShortDateString(),
-                Email=x.Email,
-                Phone= x.PhoneNumber,
-                Booking=_mydatabase.Bookings.Where(b=>b.UserId==x.UserId).Count()
+                Email = x.Email,
+                Phone = x.PhoneNumber,
+                Booking = _mydatabase.Bookings.Where(b => b.UserId == x.UserId).Count()
             }).ToList();
             return View(items);
         }
@@ -167,7 +227,7 @@ namespace Jordana.Controllers
         //    _mydatabase.SaveChanges();
         ////    return RedirectToAction("ManageRating");
         //}
-        public IActionResult IsAccepted(int ReviewId,bool value)
+        public IActionResult IsAccepted(int ReviewId, bool value)
         {
             var item = _mydatabase.Reviews.FirstOrDefault(x => x.ReviewId == ReviewId);
             item.IsAccepted = value;
