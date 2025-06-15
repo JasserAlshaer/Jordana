@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "About Us";
+    ViewData["Title"] ="About Us";
 
 }
 
@@ -10,11 +10,11 @@
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">
-            About Us</h1>
+            @_localization.Getkey("About Us")</h1>
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item "><a href="index.html" class="text-primary" style="color: var(--bs-primary) !important;">Home</a></li>
-                <li class="breadcrumb-item"><a href="#" class="text-primary" style="color: var(--bs-primary) !important;">Pages</a></li>
-                <li class="breadcrumb-item active text-white">About</li>
+                <li class="breadcrumb-item "><a href="index.html" class="text-primary" style="color: var(--bs-primary) !important;">@_localization.Getkey("Home")</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-primary" style="color: var(--bs-primary) !important;">@_localization.Getkey("Login")</a></li>
+                <li class="breadcrumb-item active text-white">@_localization.Getkey("About Us")</li>
             </ol>
     </div>
 </div>
@@ -28,41 +28,37 @@
                     <img src="~/usertemplate/img/about-img.png" class="img-fluid w-100 h-100" alt="">
                 </div>
             </div>
-            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-background.png);">
-                <h5 class="section-about-title pe-3">About Us</h5>
-                <h1 class="mb-4">Welcome to <span class="text-primary">Jordana</span></h1>
+            <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(..img/about-background.png);">
+                <h5 class="section-about-title pe-3">@_localization.Getkey("About Us")</h5>
+                <h1 class="mb-4">@_localization.Getkey("Welcome to") <span class="text-primary">@_localization.Getkey("Jordana")</span></h1>
                 <p class="mb-4">
-                    Jordana is your friendly guide to discovering the hidden gems and iconic destinations of Jordan!
-                    We are a group of computer engineering students from Yarmouk University, and this website is the final project for our graduation. Our goal is to promote tourism in Jordan by providing helpful, well-organized information about historical sites, natural wonders, and cultural attractions across the country.
+                    @_localization.Getkey("We are a group of computer engineering students from Yarmouk University, and this website is the final project for our graduation. Our goal is to promote tourism in Jordan by providing helpful, well-organized information about historical sites, natural wonders, and cultural attractions across the country.")
                 </p>
                 <p class="mb-4">
-                    We built this project from scratch — from the idea and research to the design, development, and content. It’s not just a website; it’s the result of months of teamwork, learning, and passion for both technology and our country.
-                    On this platform, you’ll find:
+                    @_localization.Getkey("We built this project from scratch — from the idea and research to the design, development, and content. It’s not just a website; it’s the result of months of teamwork, learning, and passion for both technology and our country.On this platform, you’ll find:")
                 </p>
                 <div class="row gy-2 gx-4 mb-4">
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Detailed descriptions and histories of top tourist sites</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("Detailed descriptions and histories of top tourist sites")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Location info, visiting tips, and activity suggestions</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("Location info, visiting tips, and activity suggestions")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Photos and videos to inspire your journey</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("Photos and videos to inspire your journey")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>practical details as entry fees and visiting hours</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("practical details as entry fees and visiting hours")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Real visitor reviews and feedback</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("Real visitor reviews and feedback")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>AI-based assistance to answer your questions and help you plan your trip</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("AI-based assistance to answer your questions and help you plan your trip")</p>
                     </div>
                 </div>
-               
             </div>
         </div>
     </div>
 </div>
 <!-- About End -->
-

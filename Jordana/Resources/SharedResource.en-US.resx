@@ -117,19 +117,284 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Jordan is more than Petra and the Dead Sea, it's full of stories, traditions, and local treasures waiting to be explored. Through this website, we want to reconnect people with the heart of our country, support local communities, and remind Jordanians and visitors alike of the wonders that lie within our borders." xml:space="preserve">
+    <value>الأردن ليس فقط البتراء والبحر الميت، بل هو مليء بالقصص، والتقاليد، والكنوز المحلية التي تنتظر من يكتشفها. من خلال هذا الموقع، نسعى إلى إعادة ربط الناس بقلب وطننا، ودعم المجتمعات المحلية، وتذكير الأردنيين والزوار على حدٍ سواء بروعة الكنوز التي تحتضنها حدودنا</value>
+  </data>
+  <data name="To showcase the rich heritage, breathtaking landscapes, and warm hospitality of Jordan. We aspire to make local tourism more accessible and engaging for everyone, encouraging people to discover the beauty that exists just around the corner, from ancient ruins to hidden nature spots." xml:space="preserve">
+    <value>نسعى إلى إبراز التراث الغني، والمناظر الطبيعية الخلابة، والضيافة الدافئة التي يتميّز بها الأردن. نطمح إلى جعل السياحة المحلية أكثر سهولة وتشويقًا للجميع، من خلال تشجيع الناس على استكشاف الجمال الكامن بالقرب منهم، من الآثار القديمة إلى المواقع الطبيعية الخفية</value>
+  </data>
+  <data name=", All rights reserved." xml:space="preserve">
+    <value>جميع الحقوق محفوظة ,</value>
+  </data>
   <data name="About Us" xml:space="preserve">
     <value>من نحن؟</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>العربية</value>
+  </data>
+  <data name="Book Now" xml:space="preserve">
+    <value>احجز الآن</value>
+  </data>
+  <data name="Booking" xml:space="preserve">
+    <value>الحجز</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>العملة</value>
   </data>
   <data name="Destination" xml:space="preserve">
     <value>المواقع السياحية</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>الإنجليزية</value>
+  </data>
+  <data name="EUR" xml:space="preserve">
+    <value>اليورو</value>
+  </data>
+  <data name="Get In Touch" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>الرئيسية</value>
+  </data>
+  <data name="JOD" xml:space="preserve">
+    <value>الدينار الأردني</value>
+  </data>
+  <data name="Jordana" xml:space="preserve">
+    <value>جوردانا</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>اللغة</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>سجل دخول</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>سجل خروج</value>
+  </data>
+  <data name="My Reservations" xml:space="preserve">
+    <value>حجوزاتي</value>
+  </data>
+  <data name="Our Guides" xml:space="preserve">
+    <value>المرشدون</value>
+  </data>
+  <data name="Our Message" xml:space="preserve">
+    <value>رسالتنا</value>
+  </data>
+  <data name="Our Vision" xml:space="preserve">
+    <value>رؤيتنا</value>
   </data>
   <data name="Pages" xml:space="preserve">
     <value>الصفحات</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>انشئ حساب</value>
+  </data>
+  <data name="Select Currency" xml:space="preserve">
+    <value>اختر العملة</value>
+  </data>
+  <data name="Select Language" xml:space="preserve">
+    <value>اختر اللغة</value>
+  </data>
   <data name="Services" xml:space="preserve">
     <value>الخدمات</value>
+  </data>
+  <data name="Testimonial" xml:space="preserve">
+    <value>رأي العملاء</value>
+  </data>
+  <data name="USD" xml:space="preserve">
+    <value>الدولار</value>
+  </data>
+  <data name="Yarmouk University, Irbid, Jordan" xml:space="preserve">
+    <value>جامعة اليرموك, اربد, الأردن</value>
+  </data>
+  <data name="Explore The Beauty Of Jordan" xml:space="preserve">
+    <value>استكشف جمال المملكة الأردنية الهاشمية</value>
+  </data>
+  <data name="Your journey to Jordan starts here!" xml:space="preserve">
+    <value>!رحلتك إلى الأردن تبدأ من هنا</value>
+  </data>
+  <data name="Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable." xml:space="preserve">
+    <value>جوردانا هو دليلك السياحي لاكتشاف المواقع الشهيرة، والكنوز المخفية، وكل ما بينهما، لجعل زيارتك لا تُنسى</value>
+  </data>
+  <data name="Petra" xml:space="preserve">
+    <value>البتراء</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>ابحث</value>
+  </data>
+  <data name="Welcome to" xml:space="preserve">
+    <value>اهلا بكم في </value>
+  </data>
+  <data name="We are a group of computer engineering students from Yarmouk University, and this website is the final project for our graduation. Our goal is to promote tourism in Jordan by providing helpful, well-organized information about historical sites, natural wonders, and cultural attractions across the country." xml:space="preserve">
+    <value>نحن مجموعة من طلاب هندسة الحاسوب في جامعة اليرموك، وهذا الموقع هو مشروع التخرج النهائي لنا
+هدفنا هو تعزيز السياحة في الأردن من خلال تقديم معلومات مفيدة ومنظمة حول المواقع التاريخية، والعجائب الطبيعية، والمعالم الثقافية المنتشرة في جميع أنحاء البلاد</value>
+  </data>
+  <data name="We built this project from scratch — from the idea and research to the design, development, and content. It’s not just a website; it’s the result of months of teamwork, learning, and passion for both technology and our country.On this platform, you’ll find:" xml:space="preserve">
+    <value>قمنا ببناء هذا المشروع من الصفر — بدءًا من الفكرة والبحث، وصولًا إلى التصميم والتطوير والمحتوى. إنه ليس مجرد موقع إلكتروني، بل هو ثمرة شهور من العمل الجماعي، والتعلّم، والشغف بالتقنية وحبّنا لوطننا.                                                                وعبر هذه المنصة ستجد </value>
+  </data>
+  <data name="Detailed descriptions and histories of top tourist sites" xml:space="preserve">
+    <value>وصفًا تفصيليًا وتاريخًا شاملًا لأبرز المواقع السياحية</value>
+  </data>
+  <data name="Location info, visiting tips, and activity suggestions" xml:space="preserve">
+    <value>معلومات عن الموقع، ونصائح للزيارة، واقتراحات للأنشطة</value>
+  </data>
+  <data name="Photos and videos to inspire your journey" xml:space="preserve">
+    <value>صورًا ومقاطع فيديو لإلهام رحلتك</value>
+  </data>
+  <data name="practical details as entry fees and visiting hours" xml:space="preserve">
+    <value>تفاصيل عملية مثل رسوم الدخول وساعات الزيارة</value>
+  </data>
+  <data name="Real visitor reviews and feedback" xml:space="preserve">
+    <value>آراء حقيقية من الزوّار</value>
+  </data>
+  <data name="AI-based assistance to answer your questions and help you plan your trip" xml:space="preserve">
+    <value>مساعدة تعتمد على الذكاء الاصطناعي للإجابة على استفساراتك وتقديم الدعم في تنظيم رحلتك</value>
+  </data>
+  <data name="Our Services" xml:space="preserve">
+    <value>الخدمات التي نقدمها</value>
+  </data>
+  <data name="Eg: Petra" xml:space="preserve">
+    <value>مثال: البتراء</value>
+  </data>
+  <data name="Tourist Sites Information" xml:space="preserve">
+    <value>معلومات عن المواقع السياحية</value>
+  </data>
+  <data name="We provide detailed information on historical, cultural, and natural tourist sites across Jordan. As site’s history, significance, location, entry fees, working hours, best visiting times, and things to do." xml:space="preserve">
+    <value>نقدّم معلومات تفصيلية حول المواقع السياحية التاريخية والثقافية والطبيعية في مختلف أنحاء الأردن، تشمل تاريخ الموقع وأهميته، وموقعه الجغرافي، ورسوم الدخول، وساعات العمل،  وأفضل أوقات الزيارة، والأنشطة  المقترحة </value>
+  </data>
+  <data name="Online Booking System" xml:space="preserve">
+    <value>نظام الحجز الإلكتروني</value>
+  </data>
+  <data name="Our booking system allows users to asily reserve a spot at destinations across Jordan. It’s designed to save time and make planning your trip more convenient." xml:space="preserve">
+    <value>يتيح نظام الحجز الإلكتروني الخاص بنا للمستخدمين حجز أماكنهم بسهولة في وجهات سياحية متعددة في جميع أنحاء الأردن. وقد صُمم هذا النظام لتوفير الوقت وجعل تخطيط رحلتك أكثر سهولة وراحة</value>
+  </data>
+  <data name="Travel Tips" xml:space="preserve">
+    <value>نصائح للسفر</value>
+  </data>
+  <data name="Whether you're visiting Jordan for the first time or already familiar with the country, our travel tips offer helpful guidance on local culture, currency, and more to make your trip easier and more enjoyable." xml:space="preserve">
+    <value>سواء كنت تزور الأردن لأول مرة أو كنت على دراية به مسبقًا، فإن نصائح السفر التي نقدّمها توفّر لك إرشادات مفيدة حول الثقافة المحلية والعملات وغير ذلك، لجعل رحلتك أسهل وأكثر متعة</value>
+  </data>
+  <data name="Tourists Reviews &amp; Feedback" xml:space="preserve">
+    <value>آراء السيّاح</value>
+  </data>
+  <data name="Read real experiences from fellow travelers to get honest opinions, tips, and highlights about each destination. You can also leave your own review and rate to help future travelers." xml:space="preserve">
+    <value>اطّلع على تجارب حقيقية من مسافرين آخرين للحصول على آراء صادقة ونصائح مفيدة وأبرز ما يميز كل وجهة. كما يمكنك أيضًا مشاركة تقييمك وكتابة مراجعتك الخاصة لمساعدة المسافرين القادمين</value>
+  </data>
+  <data name="Local Transportation Information" xml:space="preserve">
+    <value>معلومات عن وسائل النقل المحلية</value>
+  </data>
+  <data name="Getting around Jordan is easy with the right information! Our Transportation Local Info section offers details on local travel options including buses, taxis, car rentals, and private transportation." xml:space="preserve">
+    <value>التنقّل في الأردن يصبح سهلاً مع المعلومات المناسبة! يقدّم قسم معلومات النقل المحلي تفاصيل حول وسائل المواصلات المتوفرة، بما في ذلك الحافلات، وسيارات الأجرة، وتأجير السيارات، وخدمات النقل الخاصة</value>
+  </data>
+  <data name="AI-based Travel Assistant" xml:space="preserve">
+    <value>مساعد السفر المدعوم بالذكاء الاصطناعي</value>
+  </data>
+  <data name="Need quick help or advice? Our AI chatbot is available to answer your questions about where to go, what to bring, or how to plan your trip." xml:space="preserve">
+    <value>بحاجة إلى مساعدة سريعة أو نصيحة؟ مساعدنا الذكي متاح للإجابة على استفساراتك حول الأماكن التي يمكنك زيارتها، والأشياء التي يجب أن تحضرها، وكيفية تخطيط رحلتك</value>
+  </data>
+  <data name="Travel Guides" xml:space="preserve">
+    <value>المرشدون السياحيون</value>
+  </data>
+  <data name="Looking for a local expert to enhance your visit? Our travel guides directory connects you with experienced, knowledgeable guides who you can contact directly." xml:space="preserve">
+    <value>تبحث عن خبير محلي لتعزيز تجربتك السياحية؟ يوفّر دليل السفر لدينا قائمة بمرشدين سياحيين ذوي خبرة ومعرفة، يمكنك التواصل معهم مباشرة</value>
+  </data>
+  <data name="User Favorite Destinations" xml:space="preserve">
+    <value>الوجهات المفضلة لدى المستخدم</value>
+  </data>
+  <data name="Make your trip more personalized by saving your favorite destinations! Our Favorite Destinations feature allows users to create a custom list of the places they’d like to visit or explore." xml:space="preserve">
+    <value>اجعل رحلتك أكثر تخصيصًا من خلال حفظ وجهاتك المفضلة! تتيح لك خاصية "الوجهات المفضلة" إنشاء قائمة مخصصة بالأماكن التي ترغب في زيارتها أو استكشافها</value>
+  </data>
+  <data name="Provinces of Jordan" xml:space="preserve">
+    <value>المحافظات</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="No Available Sites In This Province" xml:space="preserve">
+    <value>لا يوجد اي مواقع في هذه المحافظة</value>
+  </data>
+  <data name="Meet Our Guides" xml:space="preserve">
+    <value>تعرّف عليهم</value>
+  </data>
+  <data name="Engineer" xml:space="preserve">
+    <value>مهندسة</value>
+  </data>
+  <data name="Rahaf Ibrahim" xml:space="preserve">
+    <value>رهف إبراهيم</value>
+  </data>
+  <data name="Nada Bani Amer" xml:space="preserve">
+    <value>ندى بني عامر</value>
+  </data>
+  <data name="Rola Odat" xml:space="preserve">
+    <value>رولا عودات</value>
+  </data>
+  <data name="Besan Al-Zoubi" xml:space="preserve">
+    <value>بيسان الزعبي</value>
+  </data>
+  <data name="Our Clients Say!!!" xml:space="preserve">
+    <value>!!!ما يقوله عملاؤنا</value>
+  </data>
+  <data name="Guides" xml:space="preserve">
+    <value>المرشدون</value>
+  </data>
+  <data name="Our Testimonial" xml:space="preserve">
+    <value>آراء عملائنا</value>
+  </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>تواصل معنا</value>
+  </data>
+  <data name="Contact For Any Query" xml:space="preserve">
+    <value>للتواصل أو طرح أي استفسار</value>
+  </data>
+  <data name="Yarmouk University," xml:space="preserve">
+    <value>, جامعة اليرموك</value>
+  </data>
+  <data name="Irbid, Jordan" xml:space="preserve">
+    <value>اربد, الأردن</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>البريد الإلكتروني</value>
+  </data>
+  <data name="Send us a message" xml:space="preserve">
+    <value>أرسل لنا رسالة</value>
+  </data>
+  <data name="Your Name" xml:space="preserve">
+    <value>اسمك</value>
+  </data>
+  <data name="Your Email" xml:space="preserve">
+    <value>بريدك الإلكتروني</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>العنوان</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>الرسالة</value>
+  </data>
+  <data name="Send Message" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="Sign Up" xml:space="preserve">
+    <value>إنشاء حساب</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>الإسم كامل</value>
+  </data>
+  <data name="Phone Number" xml:space="preserve">
+    <value>رقم الهاتف</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة السر</value>
+  </data>
+  <data name="Enter password again" xml:space="preserve">
+    <value>أدخل كلمة السر مرة أخرى</value>
+  </data>
+  <data name="Have an account?" xml:space="preserve">
+    <value>لديك حساب مسبقا؟</value>
   </data>
 </root>

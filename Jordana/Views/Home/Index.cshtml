@@ -2,7 +2,7 @@
 @using Jordana.DTOs;
 @model Tuple<List<TouristsSite>, List<CategoryDTO>,List<Review>>;
 @{
-    ViewData["Title"]="Home";
+    ViewData["Title"] = @_localization.Getkey("Home");
   
 }
 <!-- Carousel Start -->
@@ -18,10 +18,10 @@
                 <img src="~/usertemplate/img/carousel-1.jpg" class="img-fluid" alt="Image">
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The Beauty Of Jordan</h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4">Your journey to Jordan starts here!</h1>
+                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">@_localization.Getkey("Explore The Beauty Of Jordan")</h4>
+                        <h1 class="display-2 text-capitalize text-white mb-4">@_localization.Getkey("Your journey to Jordan starts here!")</h1>
                         <p class="mb-5 fs-5">
-                            Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.
+                            @_localization.Getkey("Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.")
                         </p>
                     </div>
                 </div>
@@ -30,10 +30,10 @@
                 <img src="~/usertemplate/img/carousel-2.png" class="img-fluid" alt="Image">
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The Beauty Of Jordan</h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4">Your journey to Jordan starts here!</h1>
+                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">@_localization.Getkey("Explore The Beauty Of Jordan")</h4>
+                        <h1 class="display-2 text-capitalize text-white mb-4">@_localization.Getkey("Your journey to Jordan starts here!")</h1>
                         <p class="mb-5 fs-5">
-                            Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.
+                            @_localization.Getkey("Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.")
                         </p>
                     </div>
                 </div>
@@ -42,10 +42,10 @@
                 <img src="~/usertemplate/img/carousel-3.png" class="img-fluid" alt="Image">
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The Beauty Of Jordan</h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4">Your journey to Jordan starts here!</h1>
+                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">@_localization.Getkey("Explore The Beauty Of Jordan")</h4>
+                        <h1 class="display-2 text-capitalize text-white mb-4">@_localization.Getkey("Your journey to Jordan starts here!")</h1>
                         <p class="mb-5 fs-5">
-                            Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.
+                            @_localization.Getkey("Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.")
                         </p>
                     </div>
                 </div>
@@ -54,10 +54,10 @@
                 <img src="~/usertemplate/img/carousel-4.png" class="img-fluid" alt="Image">
                 <div class="carousel-caption">
                     <div class="p-3" style="max-width: 900px;">
-                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The Beauty Of Jordan</h4>
-                        <h1 class="display-2 text-capitalize text-white mb-4">Your journey to Jordan starts here!</h1>
+                        <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">@_localization.Getkey("Explore The Beauty Of Jordan")</h4>
+                        <h1 class="display-2 text-capitalize text-white mb-4">@_localization.Getkey("Your journey to Jordan starts here!")</h1>
                         <p class="mb-5 fs-5">
-                            Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.
+                            @_localization.Getkey("Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.")
                         </p>
                     </div>
                 </div>
@@ -79,8 +79,8 @@
     <div class="container">
         <form asp-action="SearchDestination" method="post">
             <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: #b88e5d;">
-                <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" name="keyword" type="text" placeholder="Eg: Petra">
-                <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">Search</button>
+                <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" name="keyword" type="text" placeholder="@_localization.Getkey("Eg: Petra")">
+                <button type="submit" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2" style="top: 50%; right: 46px; transform: translateY(-50%);">@_localization.Getkey("Search")</button>
             </div>
         </form>
 
@@ -97,34 +97,32 @@
                 </div>
             </div>
             <div class="col-lg-7" style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(..img/about-background.png);">
-                <h5 class="section-about-title pe-3">About Us</h5>
-                <h1 class="mb-4">Welcome to <span class="text-primary">Jordana</span></h1>
+                <h5 class="section-about-title pe-3">@_localization.Getkey("About Us")</h5>
+                <h1 class="mb-4">@_localization.Getkey("Welcome to") <span class="text-primary">@_localization.Getkey("Jordana")</span></h1>
                 <p class="mb-4">
-                    Jordana is your friendly guide to discovering the hidden gems and iconic destinations of Jordan!
-                    We are a group of computer engineering students from Yarmouk University, and this website is the final project for our graduation. Our goal is to promote tourism in Jordan by providing helpful, well-organized information about historical sites, natural wonders, and cultural attractions across the country.
+                    @_localization.Getkey("We are a group of computer engineering students from Yarmouk University, and this website is the final project for our graduation. Our goal is to promote tourism in Jordan by providing helpful, well-organized information about historical sites, natural wonders, and cultural attractions across the country.")
                 </p>
                 <p class="mb-4">
-                    We built this project from scratch — from the idea and research to the design, development, and content. It’s not just a website; it’s the result of months of teamwork, learning, and passion for both technology and our country.
-                    On this platform, you’ll find:
+                    @_localization.Getkey("We built this project from scratch — from the idea and research to the design, development, and content. It’s not just a website; it’s the result of months of teamwork, learning, and passion for both technology and our country.On this platform, you’ll find:") 
                 </p>
                 <div class="row gy-2 gx-4 mb-4">
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Detailed descriptions and histories of top tourist sites</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("Detailed descriptions and histories of top tourist sites")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Location info, visiting tips, and activity suggestions</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("Location info, visiting tips, and activity suggestions")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Photos and videos to inspire your journey</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("Photos and videos to inspire your journey")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>practical details as entry fees and visiting hours</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("practical details as entry fees and visiting hours")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Real visitor reviews and feedback</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("Real visitor reviews and feedback")</p>
                     </div>
                     <div class="col-sm-6">
-                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>AI-based assistance to answer your questions and help you plan your trip</p>
+                        <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>@_localization.Getkey("AI-based assistance to answer your questions and help you plan your trip")</p>
                     </div>
                 </div>
             </div>
@@ -136,8 +134,8 @@
 <div class="container-fluid bg-light service py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Services</h5>
-            <h1 class="mb-0">Our Services</h1>
+            <h5 class="section-title px-3">@_localization.Getkey("Services")</h5>
+            <h1 class="mb-0">@_localization.Getkey("Our Services")</h1>
         </div>
         <div class="row g-4">
             <div class="col-lg-6">
@@ -145,9 +143,9 @@
                     <div class="col-12">
                         <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                             <div class="service-content text-end">
-                                <h5 class="mb-4">Tourist Sites Information</h5>
+                                <h5 class="mb-4">@_localization.Getkey("Tourist Sites Information")</h5>
                                 <p class="mb-0">
-                                    We provide detailed information on historical, cultural, and natural tourist sites across Jordan. As site’s history, significance, location, entry fees, working hours, best visiting times, and things to do.
+                                    @_localization.Getkey("We provide detailed information on historical, cultural, and natural tourist sites across Jordan. As site’s history, significance, location, entry fees, working hours, best visiting times, and things to do.")
                                 </p>
                             </div>
                             <div class="service-icon p-4">
@@ -158,9 +156,9 @@
                     <div class="col-12">
                         <div class="service-content-inner d-flex align-items-center  bg-white border border-primary rounded p-4 pe-0">
                             <div class="service-content text-end">
-                                <h5 class="mb-4">Online Booking System</h5>
+                                <h5 class="mb-4">@_localization.Getkey("Online Booking System")</h5>
                                 <p class="mb-0">
-                                    Our booking system allows users to asily reserve a spot at destinations across Jordan. It’s designed to save time and make planning your trip more convenient.
+                                    @_localization.Getkey("Our booking system allows users to asily reserve a spot at destinations across Jordan. It’s designed to save time and make planning your trip more convenient.")
                                 </p>
                             </div>
                             <div class="service-icon p-4">
@@ -171,9 +169,9 @@
                     <div class="col-12">
                         <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                             <div class="service-content text-end">
-                                <h5 class="mb-4">Travel Tips </h5>
+                                <h5 class="mb-4">@_localization.Getkey("Travel Tips") </h5>
                                 <p class="mb-0">
-                                    Whether you're visiting Jordan for the first time or already familiar with the country, our travel tips offer helpful guidance on local culture, currency, and more to make your trip easier and more enjoyable.
+                                    @_localization.Getkey("Whether you're visiting Jordan for the first time or already familiar with the country, our travel tips offer helpful guidance on local culture, currency, and more to make your trip easier and more enjoyable.")
                                 </p>
                             </div>
                             <div class="service-icon p-4">
@@ -184,9 +182,9 @@
                     <div class="col-12">
                         <div class="service-content-inner d-flex align-items-center bg-white border border-primary rounded p-4 pe-0">
                             <div class="service-content text-end">
-                                <h5 class="mb-4">Tourists Reviews & Feedback</h5>
+                                <h5 class="mb-4">@_localization.Getkey("Tourists Reviews & Feedback")</h5>
                                 <p class="mb-0">
-                                    Read real experiences from fellow travelers to get honest opinions, tips, and highlights about each destination. You can also leave your own review and rate to help future travelers.
+                                    @_localization.Getkey("Read real experiences from fellow travelers to get honest opinions, tips, and highlights about each destination. You can also leave your own review and rate to help future travelers.")
                                 </p>
                             </div>
                             <div class="service-icon p-4">
@@ -204,9 +202,9 @@
                                 <i class="fa fa-bus fa-4x text-primary"></i>
                             </div>
                             <div class="service-content">
-                                <h5 class="mb-4">Local Transportation Information</h5>
+                                <h5 class="mb-4">@_localization.Getkey("Local Transportation Information")</h5>
                                 <p class="mb-0">
-                                    Getting around Jordan is easy with the right information! Our Transportation Local Info section offers details on local travel options including buses, taxis, car rentals, and private transportation.
+                                    @_localization.Getkey("Getting around Jordan is easy with the right information! Our Transportation Local Info section offers details on local travel options including buses, taxis, car rentals, and private transportation.")
                                 </p>
                             </div>
                         </div>
@@ -217,9 +215,9 @@
                                 <i class="fa fa-robot fa-4x text-primary"></i>
                             </div>
                             <div class="service-content">
-                                <h5 class="mb-4">AI-based Travel Assistant</h5>
+                                <h5 class="mb-4">@_localization.Getkey("AI-based Travel Assistant")</h5>
                                 <p class="mb-0">
-                                    Need quick help or advice? Our AI chatbot is available to answer your questions about where to go, what to bring, or how to plan your trip.
+                                    @_localization.Getkey("Need quick help or advice? Our AI chatbot is available to answer your questions about where to go, what to bring, or how to plan your trip.")
                                 </p>
                             </div>
                         </div>
@@ -230,9 +228,9 @@
                                 <i class="fa fa-users fa-4x text-primary"></i>
                             </div>
                             <div class="service-content">
-                                <h5 class="mb-4">Travel Guides</h5>
+                                <h5 class="mb-4">@_localization.Getkey("Travel Guides")</h5>
                                 <p class="mb-0">
-                                    Looking for a local expert to enhance your visit? Our travel guides directory connects you with experienced, knowledgeable guides who you can contact directly.
+                                    @_localization.Getkey("Looking for a local expert to enhance your visit? Our travel guides directory connects you with experienced, knowledgeable guides who you can contact directly.")
                                 </p>
                             </div>
                         </div>
@@ -243,9 +241,9 @@
                                 <i class="fa fa-star fa-4x text-primary"></i>
                             </div>
                             <div class="service-content">
-                                <h5 class="mb-4">User Favorite Destinations</h5>
+                                <h5 class="mb-4">@_localization.Getkey("User Favorite Destinations")</h5>
                                 <p class="mb-0">
-                                    Make your trip more personalized by saving your favorite destinations! Our Favorite Destinations feature allows users to create a custom list of the places they’d like to visit or explore.
+                                    @_localization.Getkey("Make your trip more personalized by saving your favorite destinations! Our Favorite Destinations feature allows users to create a custom list of the places they’d like to visit or explore.")
                                 </p>
                             </div>
                         </div>
@@ -260,14 +258,16 @@
 <div class="container-fluid destination py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Destination</h5>
-            <h1 class="mb-0">Provinces of Jordan</h1>
+            <h5 class="section-title px-3">
+                @_localization.Getkey("Destination")
+            </h5>
+            <h1 class="mb-0"> @_localization.Getkey("Provinces of Jordan")</h1>
         </div>
         <div class="tab-class text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                 <li class="nav-item">
                     <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-all">
-                        <span class="text-dark" style="width: 150px;">All</span>
+                        <span class="text-dark" style="width: 150px;">@_localization.Getkey("All")</span>
                     </a>
                 </li>
                 @foreach (var item in Model.Item2)
@@ -349,7 +349,10 @@
                         }
                         else
                         {
-                            <h1>No Available Sites In This Province</h1>
+                            <h1>
+                                @_localization.Getkey("No Available Sites In This Province")
+                                
+                            </h1>
                         }
                     </div>
                 }
@@ -363,8 +366,11 @@
 <div class="container-fluid guide py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Travel Guides</h5>
-            <h1 class="mb-0">Meet Our Guides</h1>
+            <h5 class="section-title px-3">
+                @_localization.Getkey("Travel Guides")
+                
+            </h5>
+            <h1 class="mb-0"> @_localization.Getkey("Meet Our Guides")</h1>
         </div>
         <div class="row g-4">
             <div class="col-md-6 col-lg-3">
@@ -383,8 +389,8 @@
                     </div>
                     <div class="guide-title text-center rounded-bottom p-4">
                         <div class="guide-title-inner">
-                            <h4 class="mt-3">Rahaf Ibrahim</h4>
-                            <p class="mb-0">Engineer</p>
+                            <h4 class="mt-3">@_localization.Getkey("Rahaf Ibrahim")</h4>
+                            <p class="mb-0">@_localization.Getkey("Engineer")</p>
                         </div>
                     </div>
                 </div>
@@ -404,8 +410,8 @@
                     </div>
                     <div class="guide-title text-center rounded-bottom p-4">
                         <div class="guide-title-inner">
-                            <h4 class="mt-3">Nada Bani Amer</h4>
-                            <p class="mb-0">Engineer</p>
+                            <h4 class="mt-3">@_localization.Getkey("Nada Bani Amer")</h4>
+                            <p class="mb-0">@_localization.Getkey("Engineer")</p>
                         </div>
                     </div>
                 </div>
@@ -424,8 +430,8 @@
                     </div>
                     <div class="guide-title text-center rounded-bottom p-4">
                         <div class="guide-title-inner">
-                            <h4 class="mt-3">Rola Odat</h4>
-                            <p class="mb-0">Engineer</p>
+                            <h4 class="mt-3">@_localization.Getkey("Rola Odat")</h4>
+                            <p class="mb-0">@_localization.Getkey("Engineer")</p>
                         </div>
                     </div>
                 </div>
@@ -444,8 +450,10 @@
                     </div>
                     <div class="guide-title text-center rounded-bottom p-4">
                         <div class="guide-title-inner">
-                            <h4 class="mt-3">Besan Al-Zoubi</h4>
-                            <p class="mb-0">Engineer</p>
+                            <h4 class="mt-3">
+                                @_localization.Getkey("Besan Al-Zoubi")
+                            </h4>
+                            <p class="mb-0">@_localization.Getkey("Engineer")</p>
                         </div>
                     </div>
                 </div>
@@ -458,8 +466,10 @@
 <div class="container-fluid testimonial py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Testimonial</h5>
-            <h1 class="mb-0">Our Clients Say!!!</h1>
+            <h5 class="section-title px-3">
+                @_localization.Getkey("Testimonial")
+            </h5>
+            <h1 class="mb-0"> @_localization.Getkey("Our Clients Say!!!")</h1>
         </div>
         <div class="testimonial-carousel owl-carousel">
             @foreach (var item in Model.Item3)

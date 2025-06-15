@@ -7,11 +7,11 @@
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">
-            Our Testimonial</h1>
+            @_localization.Getkey("Our Testimonial") </h1>
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item "><a href="index.html" class="text-primary" style="color: var(--bs-primary) !important;">Home</a></li>
-                <li class="breadcrumb-item"><a href="#" class="text-primary" style="color: var(--bs-primary) !important;">Pages</a></li>
-                <li class="breadcrumb-item active text-white">Testimonial</li>
+                <li class="breadcrumb-item "><a href="index.html" class="text-primary" style="color: var(--bs-primary) !important;">@_localization.Getkey("Home")</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-primary" style="color: var(--bs-primary) !important;">@_localization.Getkey("Login")</a></li>
+                <li class="breadcrumb-item active text-white">@_localization.Getkey("Testimonial")</li>
             </ol>
     </div>
 </div>
@@ -20,8 +20,10 @@
 <div class="container-fluid testimonial py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Testimonial</h5>
-            <h1 class="mb-0">Our Clients Say!!!</h1>
+            <h5 class="section-title px-3">
+                @_localization.Getkey("Testimonial")
+            </h5>
+            <h1 class="mb-0"> @_localization.Getkey("Our Clients Say!!!")</h1>
         </div>
         <div class="testimonial-carousel owl-carousel">
             @foreach (var item in Model)

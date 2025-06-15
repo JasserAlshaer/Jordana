@@ -8,11 +8,11 @@
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h3 class="text-white display-3 mb-4">
-            Destination</h1>
+            @_localization.Getkey("Destination")</h1>
             <ol class="breadcrumb justify-content-center mb-0">
-                <li class="breadcrumb-item "><a href="index.html" class="text-primary" style="color: var(--bs-primary) !important;">Home</a></li>
-                <li class="breadcrumb-item"><a href="#" class="text-primary" style="color: var(--bs-primary) !important;">Pages</a></li>
-                <li class="breadcrumb-item active text-white">Destination</li>
+                <li class="breadcrumb-item "><a href="index.html" class="text-primary" style="color: var(--bs-primary) !important;">@_localization.Getkey("Home")</a></li>
+                <li class="breadcrumb-item"><a href="#" class="text-primary" style="color: var(--bs-primary) !important;">@_localization.Getkey("Login")</a></li>
+                <li class="breadcrumb-item active text-white">@_localization.Getkey("Destination")</li>
             </ol>
     </div>
 </div>
@@ -21,17 +21,19 @@
 <div class="container-fluid destination py-5">
     <div class="container py-5">
         <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Destination</h5>
-            <h1 class="mb-0">Provinces of Jordan</h1>
+            <h5 class="section-title px-3">
+                @_localization.Getkey("Destination")
+            </h5>
+            <h1 class="mb-0"> @_localization.Getkey("Provinces of Jordan")</h1>
         </div>
         <div class="tab-class text-center">
             <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                 <li class="nav-item">
                     <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active" data-bs-toggle="pill" href="#tab-all">
-                        <span class="text-dark" style="width: 150px;">All</span>
+                        <span class="text-dark" style="width: 150px;">@_localization.Getkey("All")</span>
                     </a>
                 </li>
-                @foreach(var item in Model.Item2)
+                @foreach (var item in Model.Item2)
                 {
                     @* var category = item; *@
                     <li class="nav-item">
@@ -48,7 +50,7 @@
                     <div class="row g-4">
                         <div class="col-xl-12">
                             <div class="row g-4">
-                                @foreach(var item in Model.Item1)
+                                @foreach (var item in Model.Item1)
                                 {
                                     <div class="col-lg-6">
                                         <div class="destination-img">
@@ -59,7 +61,7 @@
                                                 <a href="#" class="btn-hover text-white">@item.City - @item.Region<i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
-                                                <a asp-action="Booking" asp-route-Id="@item.SiteId"  class="btn btn-light btn-lg-square text-primary" title="Open Booking">
+                                                <a asp-action="Booking" asp-route-Id="@item.SiteId" class="btn btn-light btn-lg-square text-primary" title="Open Booking">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd" d="M6.364 1.5a.5.5 0 0 1 .5-.5h7.636a.5.5 0 0 1 .5.5v7.636a.5.5 0 0 1-1 0V3.207L2.854 13.854a.5.5 0 1 1-.708-.708L13.293 2.5H6.864a.5.5 0 0 1-.5-.5z" />
                                                     </svg>
@@ -73,19 +75,19 @@
                         </div>
                     </div>
                 </div>
-                @for(int i=0; i<Model.Item2.Count; i++)
+                @for (int i = 0; i < Model.Item2.Count; i++)
                 {
                     var category = Model.Item2[i];
                     var sites = Model.Item1.Where(s => s.Region == category.Name).ToList();
                     <div id="tab-@category.CategoryId" class="tab-pane fade show p-0">
-                        @if(sites.Any())
+                        @if (sites.Any())
                         {
                             <div class="row g-4">
-                            @foreach(var item in sites)
-                            {
+                                @foreach (var item in sites)
+                                {
 
-                                
-                                  <div class="col-lg-6">
+
+                                    <div class="col-lg-6">
                                         <div class="destination-img">
                                             <img class="img-fluid rounded w-100" src="~/uploads/@item.MainImage" alt="">
                                             <div class="destination-overlay p-4">
@@ -94,7 +96,7 @@
                                                 <a href="#" class="btn-hover text-white">@item.City - @item.Region<i class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
-                                                <a asp-action="Booking" asp-route-Id="@item.SiteId"  class="btn btn-light btn-lg-square text-primary" title="Open Booking">
+                                                <a asp-action="Booking" asp-route-Id="@item.SiteId" class="btn btn-light btn-lg-square text-primary" title="Open Booking">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
                                                         <path fill-rule="evenodd" d="M6.364 1.5a.5.5 0 0 1 .5-.5h7.636a.5.5 0 0 1 .5.5v7.636a.5.5 0 0 1-1 0V3.207L2.854 13.854a.5.5 0 1 1-.708-.708L13.293 2.5H6.864a.5.5 0 0 1-.5-.5z" />
                                                     </svg>
@@ -102,19 +104,22 @@
                                             </div>
                                         </div>
                                     </div>
-                                
-                            }
+
+                                }
                             </div>
-                            
+
 
                         }
-                     else
-                     {
-                         <h1>No Available Sites In This Province</h1>
-                     }
+                        else
+                        {
+                            <h1>
+                                @_localization.Getkey("No Available Sites In This Province")
+
+                            </h1>
+                        }
                     </div>
                 }
-          
+
             </div>
         </div>
     </div>

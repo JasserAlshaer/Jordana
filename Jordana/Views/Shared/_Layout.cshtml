@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Jordana - @ViewData["Title"]</title>
+    <title>@_localization.Getkey("Jordana") - @ViewData["Title"]</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Tourism in Jordan, Tourist Information, Interactive Platform, Travel Assistance,
         Jordan Attractions,Jordan tourism, Petra, Dead Sea, Amman travel, travel guide Jordan, Jordana website" name="keywords">
@@ -57,11 +57,12 @@
                 </div>
             </div>
             <div class="col-lg-4 text-center text-lg-end">
-                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <div class="d-inline-flex align-items-center" style="height: 45px;"> 
+
                     @if (ViewData["Profile"] == "Guest")
                     {
-                        <a asp-action="Signup"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>Register</small></a>
-                        <a asp-action="Login"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>Login</small></a>
+                        <a asp-action="Signup"><small class="me-3 text-light"><i class="fa fa-user me-2"></i>@_localization.Getkey("Register")</small></a>
+                        <a asp-action="Login"><small class="me-3 text-light"><i class="fa fa-sign-in-alt me-2"></i>@_localization.Getkey("Login")</small></a>
 
                     }
                     else
@@ -69,13 +70,13 @@
                         <!-- ✅ Logged In: Show My Reservations & Logout -->
                         <a asp-action="MyReserviations" asp-controller="Home">
                             <small class="me-3 text-light">
-                                <i class="fas fa-calendar-check me-2"></i> My Reservations
+                                <i class="fas fa-calendar-check me-2"></i>@_localization.Getkey("My Reservations")
                             </small>
                         </a>
 
                         <a asp-action="Logout" asp-controller="Home">
                             <small class="me-3 text-light">
-                                <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                <i class="fas fa-sign-out-alt me-2"></i>@_localization.Getkey("Logout")
                             </small>
                         </a>
                     }
@@ -89,7 +90,7 @@
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
-                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>Jordana</h1>
+                <h1 class="m-0"><i class="fa fa-map-marker-alt me-3"></i>@_localization.Getkey("Jordana")</h1>
                 <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -152,48 +153,48 @@
                             }
                             @if (ViewData["Title"] == "Booking" && ViewData["Profile"] == "Customer")
                             {
-                                <a asp-action="Booking" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Booking</a>
+                                <a asp-action="Booking" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">@_localization.Getkey("Booking")</a>
 
                             }
                             else if (ViewData["Profile"] == "Customer")
                             {
-                                <a asp-action="Booking" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Booking</a>
+                                <a asp-action="Booking" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">@_localization.Getkey("Booking")</a>
 
                             }
                             @if (ViewData["Title"] == "Our Guides")
                             {
-                                <a asp-action="OurGuides" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Our Guides</a>
+                                <a asp-action="OurGuides" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">@_localization.Getkey("Our Guides")</a>
 
                             }
                             else
                             {
-                                <a asp-action="OurGuides" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Our Guides</a>
+                                <a asp-action="OurGuides" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">@_localization.Getkey("Our Guides")</a>
 
                             }
                             @if (ViewData["Title"] == "Testimonial")
                             {
-                                <a asp-action="Testimonial" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Testimonial</a>
+                                <a asp-action="Testimonial" class="dropdown-item active" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">@_localization.Getkey("Testimonial")</a>
 
                             }
                             else
                             {
-                                <a asp-action="Testimonial" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">Testimonial</a>
+                                <a asp-action="Testimonial" class="dropdown-item" style="border-color:#b88e5d;" onmouseover="this.style.backgroundColor='#b88e5d'" onmouseout="this.style.backgroundColor='#fff'">@_localization.Getkey("Testimonial")</a>
 
                             }
                         </div>
                     </div>
                     @if (ViewData["Title"] == "Contact Us")
                     {
-                        <a asp-action="ContactUs" class="nav-item nav-link active" style="border-color:#b88e5d;">Contact</a>
-
+                        <a asp-action="ContactUs" class="nav-item nav-link active" style="border-color:#b88e5d;">@_localization.Getkey("Contact")</a>
+                        
                     }
                     else
                     {
-                        <a asp-action="ContactUs" class="nav-item nav-link" style="border-color:#b88e5d;">Contact</a>
+                        <a asp-action="ContactUs" class="nav-item nav-link" style="border-color:#b88e5d;">@_localization.Getkey("Contact")</a>
 
                     }
                 </div>
-                <a asp-action="Destination" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" style="background-color: #b88e5d; border-color: #b88e5d; color: #fff;">Book Now</a>
+                <a asp-action="Destination" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4" style="background-color: #b88e5d; border-color: #b88e5d; color: #fff;">@_localization.Getkey("Book Now")</a>
             </div>
         </nav>
 
@@ -204,8 +205,8 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                        <h4 class="mb-4 text-primary">Get In Touch</h4>
-                        <a href=""><i class="fas fa-home me-2"></i> Yarmouk University, Irbid, Jordan</a>
+                            <h4 class="mb-4 text-primary">@_localization.Getkey("Get In Touch")</h4>
+                            <a href=""><i class="fas fa-home me-2"></i>@_localization.Getkey("Yarmouk University, Irbid, Jordan") </a>
                         <a href=""><i class="fas fa-envelope me-2"></i> Jordana@gmail.com</a>
                         <a href=""><i class="fas fa-phone me-2"></i> +962 7 9000 0000</a>
                         <div class="d-flex align-items-center">
@@ -218,17 +219,17 @@
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-primary">Our Vision</h4>
+                            <h4 class="mb-4 text-primary">@_localization.Getkey("Our Vision")</h4>
                             <p>
-                                To showcase the rich heritage, breathtaking landscapes, and warm hospitality of Jordan. We aspire to make local tourism more accessible and engaging for everyone, encouraging people to discover the beauty that exists just around the corner, from ancient ruins to hidden nature spots.
+                                @_localization.Getkey("To showcase the rich heritage, breathtaking landscapes, and warm hospitality of Jordan. We aspire to make local tourism more accessible and engaging for everyone, encouraging people to discover the beauty that exists just around the corner, from ancient ruins to hidden nature spots.")
                             </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-3">
                     <div class="footer-item d-flex flex-column">
-                            <h4 class="mb-4 text-primary">Our Message</h4>
+                            <h4 class="mb-4 text-primary">@_localization.Getkey("Our Message")</h4>
                             <p>
-                                Jordan is more than Petra and the Dead Sea, it's full of stories, traditions, and local treasures waiting to be explored. Through this website, we want to reconnect people with the heart of our country, support local communities, and remind Jordanians and visitors alike of the wonders that lie within our borders.
+                                @_localization.Getkey("Jordan is more than Petra and the Dead Sea, it's full of stories, traditions, and local treasures waiting to be explored. Through this website, we want to reconnect people with the heart of our country, support local communities, and remind Jordanians and visitors alike of the wonders that lie within our borders.")
                             </p>
                     </div>
                 </div>
@@ -239,12 +240,12 @@
                                     <form>
                                         <div class="form-floating">
                                             <select class="form-select text-white" style="background-color: var(--bs-primary)" id="languageSelect">
-                                                <option value="" selected >Select Language</option>
-                                                <option value="ar-AR">English</option>
-                                                <option value="en-US">Arabic</option>
+                                                <option value="" selected>@_localization.Getkey("Select Language")</option>
+                                                <option value="ar-AR">@_localization.Getkey("English")</option>
+                                                <option value="en-US">@_localization.Getkey("Arabic")</option>
 
                                             </select>
-                                            <label for="languageSelect" style="color: var(--bs-dark)">Language</label>
+                                            <label for="languageSelect" style="color: var(--bs-dark)">@_localization.Getkey("Language")</label>
                                         </div>
                                     </form>
 
@@ -256,16 +257,17 @@
                                     });
                                 </script>
 
-                            <div class="col-xl-4">
+                            <div class="col-xl-8">
                                 <form>
                                     <div class="form-floating">
                                         <select class="form-select text-white" style="background-color: var(--bs-primary)" id="select1">
-                                            <option value="1">JOD</option>
-                                           @*  <option value="2">EUR</option>
-                                            <option value="3">USD</option>
-                                            <option value="3">GBP</option> *@
+                                                <option value="" selected>@_localization.Getkey("Select Currency")</option>
+                                                <option value="1">@_localization.Getkey("JOD")</option>
+                                                <option value="2">@_localization.Getkey("EUR")</option>
+                                                <option value="3">@_localization.Getkey("USD")</option>
+                                           
                                         </select>
-                                        <label for="select1" style="color: var(--bs-dark)">Currency</label>
+                                            <label for="select1" style="color: var(--bs-dark)">@_localization.Getkey("Currency")</label>
                                     </div>
                                 </form>
                             </div>
@@ -290,7 +292,7 @@
         <div class="container">
             <div class="row g-4 align-items-center">
                     <div class="col-md-6 text-center text-md-end mb-md-0 text-white">
-                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">Jordana</a> , All rights reserved.
+                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="#">@_localization.Getkey("Jordana")</a> @_localization.Getkey(", All rights reserved.")
                 </div>
 
             </div>

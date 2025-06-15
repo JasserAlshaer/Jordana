@@ -117,19 +117,283 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Jordan is more than Petra and the Dead Sea, it's full of stories, traditions, and local treasures waiting to be explored. Through this website, we want to reconnect people with the heart of our country, support local communities, and remind Jordanians and visitors alike of the wonders that lie within our borders." xml:space="preserve">
+    <value>Jordan is more than Petra and the Dead Sea, it's full of stories, traditions, and local treasures waiting to be explored. Through this website, we want to reconnect people with the heart of our country, support local communities, and remind Jordanians and visitors alike of the wonders that lie within our borders.</value>
+  </data>
+  <data name="To showcase the rich heritage, breathtaking landscapes, and warm hospitality of Jordan. We aspire to make local tourism more accessible and engaging for everyone, encouraging people to discover the beauty that exists just around the corner, from ancient ruins to hidden nature spots." xml:space="preserve">
+    <value>                                To showcase the rich heritage, breathtaking landscapes, and warm hospitality of Jordan. We aspire to make local tourism more accessible and engaging for everyone, encouraging people to discover the beauty that exists just around the corner, from ancient ruins to hidden nature spots.</value>
+  </data>
+  <data name=", All rights reserved." xml:space="preserve">
+    <value>, All rights reserved.</value>
+  </data>
   <data name="About Us" xml:space="preserve">
     <value>About</value>
+  </data>
+  <data name="Arabic" xml:space="preserve">
+    <value>Arabic</value>
+  </data>
+  <data name="Book Now" xml:space="preserve">
+    <value>Book Now</value>
+  </data>
+  <data name="Booking" xml:space="preserve">
+    <value>Booking</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Currency" xml:space="preserve">
+    <value>Currency</value>
   </data>
   <data name="Destination" xml:space="preserve">
     <value>Destination</value>
   </data>
+  <data name="English" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="EUR" xml:space="preserve">
+    <value>EUR</value>
+  </data>
+  <data name="Get In Touch" xml:space="preserve">
+    <value>Get In Touch</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="JOD" xml:space="preserve">
+    <value>JOD</value>
+  </data>
+  <data name="Jordana" xml:space="preserve">
+    <value>Jordana</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="My Reservations" xml:space="preserve">
+    <value>My Reservations</value>
+  </data>
+  <data name="Our Guides" xml:space="preserve">
+    <value>Our Guides</value>
+  </data>
+  <data name="Our Message" xml:space="preserve">
+    <value>Our Message</value>
+  </data>
+  <data name="Our Vision" xml:space="preserve">
+    <value>Our Vision</value>
   </data>
   <data name="Pages" xml:space="preserve">
     <value>Pages</value>
   </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Select Currency" xml:space="preserve">
+    <value>Select Currency</value>
+  </data>
+  <data name="Select Language" xml:space="preserve">
+    <value>Select Language</value>
+  </data>
   <data name="Services" xml:space="preserve">
     <value>Services</value>
+  </data>
+  <data name="Testimonial" xml:space="preserve">
+    <value>Testimonial</value>
+  </data>
+  <data name="USD" xml:space="preserve">
+    <value>USD</value>
+  </data>
+  <data name="Yarmouk University, Irbid, Jordan" xml:space="preserve">
+    <value>Yarmouk University, Irbid, Jordan</value>
+  </data>
+  <data name="Explore The Beauty Of Jordan" xml:space="preserve">
+    <value>Explore The Beauty Of Jordan</value>
+  </data>
+  <data name="Your journey to Jordan starts here!" xml:space="preserve">
+    <value>Your journey to Jordan starts here!</value>
+  </data>
+  <data name="Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable." xml:space="preserve">
+    <value>Jordana is your to-go guide for exploring famous sites, hidden gems, and everything in between to make your visit unforgettable.</value>
+  </data>
+  <data name="Petra" xml:space="preserve">
+    <value>Petra</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Welcome to" xml:space="preserve">
+    <value>Welcome to</value>
+  </data>
+  <data name="We are a group of computer engineering students from Yarmouk University, and this website is the final project for our graduation. Our goal is to promote tourism in Jordan by providing helpful, well-organized information about historical sites, natural wonders, and cultural attractions across the country." xml:space="preserve">
+    <value>We are a group of computer engineering students from Yarmouk University, and this website is the final project for our graduation. Our goal is to promote tourism in Jordan by providing helpful, well-organized information about historical sites, natural wonders, and cultural attractions across the country.</value>
+  </data>
+  <data name="We built this project from scratch — from the idea and research to the design, development, and content. It’s not just a website; it’s the result of months of teamwork, learning, and passion for both technology and our country.On this platform, you’ll find:" xml:space="preserve">
+    <value>We built this project from scratch — from the idea and research to the design, development, and content. It’s not just a website; it’s the result of months of teamwork, learning, and passion for both technology and our country.On this platform, you’ll find:"</value>
+  </data>
+  <data name="Detailed descriptions and histories of top tourist sites" xml:space="preserve">
+    <value>Detailed descriptions and histories of top tourist sites</value>
+  </data>
+  <data name="Location info, visiting tips, and activity suggestions" xml:space="preserve">
+    <value>Location info, visiting tips, and activity suggestions</value>
+  </data>
+  <data name="Photos and videos to inspire your journey" xml:space="preserve">
+    <value>Photos and videos to inspire your journey</value>
+  </data>
+  <data name="practical details as entry fees and visiting hours" xml:space="preserve">
+    <value>practical details as entry fees and visiting hours</value>
+  </data>
+  <data name="Real visitor reviews and feedback" xml:space="preserve">
+    <value>Real visitor reviews and feedback</value>
+  </data>
+  <data name="AI-based assistance to answer your questions and help you plan your trip" xml:space="preserve">
+    <value>AI-based assistance to answer your questions and help you plan your trip</value>
+  </data>
+  <data name="Our Services" xml:space="preserve">
+    <value>Our Services</value>
+  </data>
+  <data name="Eg: Petra" xml:space="preserve">
+    <value>Eg: Petra</value>
+  </data>
+  <data name="Tourist Sites Information" xml:space="preserve">
+    <value>Tourist Sites Information</value>
+  </data>
+  <data name="We provide detailed information on historical, cultural, and natural tourist sites across Jordan. As site’s history, significance, location, entry fees, working hours, best visiting times, and things to do." xml:space="preserve">
+    <value>We provide detailed information on historical, cultural, and natural tourist sites across Jordan. As site’s history, significance, location, entry fees, working hours, best visiting times, and things to do.</value>
+  </data>
+  <data name="Online Booking System" xml:space="preserve">
+    <value>Online Booking System</value>
+  </data>
+  <data name="Our booking system allows users to asily reserve a spot at destinations across Jordan. It’s designed to save time and make planning your trip more convenient." xml:space="preserve">
+    <value>Our booking system allows users to asily reserve a spot at destinations across Jordan. It’s designed to save time and make planning your trip more convenient.</value>
+  </data>
+  <data name="Travel Tips" xml:space="preserve">
+    <value>Travel Tips</value>
+  </data>
+  <data name="Whether you're visiting Jordan for the first time or already familiar with the country, our travel tips offer helpful guidance on local culture, currency, and more to make your trip easier and more enjoyable." xml:space="preserve">
+    <value>Whether you're visiting Jordan for the first time or already familiar with the country, our travel tips offer helpful guidance on local culture, currency, and more to make your trip easier and more enjoyable.</value>
+  </data>
+  <data name="Tourists Reviews &amp; Feedback" xml:space="preserve">
+    <value>Tourists Reviews &amp; Feedback</value>
+  </data>
+  <data name="Read real experiences from fellow travelers to get honest opinions, tips, and highlights about each destination. You can also leave your own review and rate to help future travelers." xml:space="preserve">
+    <value>Read real experiences from fellow travelers to get honest opinions, tips, and highlights about each destination. You can also leave your own review and rate to help future travelers.</value>
+  </data>
+  <data name="Local Transportation Information" xml:space="preserve">
+    <value>Local Transportation Information</value>
+  </data>
+  <data name="Getting around Jordan is easy with the right information! Our Transportation Local Info section offers details on local travel options including buses, taxis, car rentals, and private transportation." xml:space="preserve">
+    <value>Getting around Jordan is easy with the right information! Our Transportation Local Info section offers details on local travel options including buses, taxis, car rentals, and private transportation.</value>
+  </data>
+  <data name="AI-based Travel Assistant" xml:space="preserve">
+    <value>AI-based Travel Assistant</value>
+  </data>
+  <data name="Need quick help or advice? Our AI chatbot is available to answer your questions about where to go, what to bring, or how to plan your trip." xml:space="preserve">
+    <value>Need quick help or advice? Our AI chatbot is available to answer your questions about where to go, what to bring, or how to plan your trip.</value>
+  </data>
+  <data name="Travel Guides" xml:space="preserve">
+    <value>Travel Guides</value>
+  </data>
+  <data name="Looking for a local expert to enhance your visit? Our travel guides directory connects you with experienced, knowledgeable guides who you can contact directly." xml:space="preserve">
+    <value>Looking for a local expert to enhance your visit? Our travel guides directory connects you with experienced, knowledgeable guides who you can contact directly.</value>
+  </data>
+  <data name="User Favorite Destinations" xml:space="preserve">
+    <value>User Favorite Destinations</value>
+  </data>
+  <data name="Make your trip more personalized by saving your favorite destinations! Our Favorite Destinations feature allows users to create a custom list of the places they’d like to visit or explore." xml:space="preserve">
+    <value>Make your trip more personalized by saving your favorite destinations! Our Favorite Destinations feature allows users to create a custom list of the places they’d like to visit or explore.</value>
+  </data>
+  <data name="Provinces of Jordan" xml:space="preserve">
+    <value>Provinces of Jordan</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="No Available Sites In This Province" xml:space="preserve">
+    <value>No Available Sites In This Province</value>
+  </data>
+  <data name="Meet Our Guides" xml:space="preserve">
+    <value>Meet Our Guides</value>
+  </data>
+  <data name="Engineer" xml:space="preserve">
+    <value>Engineer</value>
+  </data>
+  <data name="Rahaf Ibrahim" xml:space="preserve">
+    <value>Rahaf Ibrahim</value>
+  </data>
+  <data name="Nada Bani Amer" xml:space="preserve">
+    <value>Nada Bani Amer</value>
+  </data>
+  <data name="Rola Odat" xml:space="preserve">
+    <value>Rola Odat</value>
+  </data>
+  <data name="Besan Al-Zoubi" xml:space="preserve">
+    <value>Besan Al-Zoubi</value>
+  </data>
+  <data name="Our Clients Say!!!" xml:space="preserve">
+    <value>Our Clients Say!!!</value>
+  </data>
+  <data name="Guides" xml:space="preserve">
+    <value>Guides</value>
+  </data>
+  <data name="Our Testimonial" xml:space="preserve">
+    <value>Our Testimonial</value>
+  </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Contact For Any Query" xml:space="preserve">
+    <value>Contact For Any Query</value>
+  </data>
+  <data name="Yarmouk University," xml:space="preserve">
+    <value>Yarmouk University,</value>
+  </data>
+  <data name="Irbid, Jordan" xml:space="preserve">
+    <value>Irbid, Jordan</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Send us a message" xml:space="preserve">
+    <value>Send us a message</value>
+  </data>
+  <data name="Your Name" xml:space="preserve">
+    <value>Your Name</value>
+  </data>
+  <data name="Your Email" xml:space="preserve">
+    <value>Your Email</value>
+  </data>
+  <data name="Subject" xml:space="preserve">
+    <value>Subject</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Send Message" xml:space="preserve">
+    <value>Send Message</value>
+  </data>
+  <data name="Sign Up" xml:space="preserve">
+    <value>Sign Up</value>
+  </data>
+  <data name="Full Name" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+  <data name="Phone Number" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Enter password again" xml:space="preserve">
+    <value>Enter password again</value>
+  </data>
+  <data name="Have an account?" xml:space="preserve">
+    <value>Have an account?</value>
   </data>
 </root>
