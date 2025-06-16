@@ -4,6 +4,9 @@ using System.Reflection;
 namespace Jordana.Resources
 {
 
+
+
+
     public class SharedResource { }
     public class LanguageService
     {
