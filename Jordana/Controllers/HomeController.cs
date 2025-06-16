@@ -82,7 +82,7 @@ namespace Jordana.Controllers
                 ViewData["Profile"] = "Guest";
             }
             var reviews = _mydatabase.Reviews.Include(x => x.User).OrderBy(c => c.ReviewId).ToList();
-            var categories = _mydatabase.TouristsSites.GroupBy(x => x.Region).Select(c => new CategoryDTO
+            var categories = _mydatabase.TouristsSites.GroupBy(x => x.City).Select(c => new CategoryDTO
             {
                 CategoryId = c.FirstOrDefault().CategoryId,
                 Name = c.Key
@@ -161,7 +161,7 @@ namespace Jordana.Controllers
             {
                 ViewData["Profile"] = "Guest";
             }
-            var categories = _mydatabase.TouristsSites.GroupBy(x => x.Region).Select(c => new CategoryDTO
+            var categories = _mydatabase.TouristsSites.GroupBy(x => x.City).Select(c => new CategoryDTO
             {
                 CategoryId = c.FirstOrDefault().CategoryId,
                 Name = c.Key

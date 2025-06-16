@@ -291,7 +291,7 @@
                                 {
                                     <div class="col-lg-6">
                                         <div class="destination-img">
-                                            <img class="img-fluid rounded w-100" src="~/uploads/@item.MainImage" alt="">
+                                            <img class="img-fluid rounded w-100" src="@item.MainImage" alt="">
                                             <div class="destination-overlay p-4">
                                                 <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">@item.Category</a>
                                                 <h4 class="text-white mb-2 mt-3">@item.SiteName</h4>
@@ -315,7 +315,7 @@
                 @for (int i = 0; i < Model.Item2.Count; i++)
                 {
                     var category = Model.Item2[i];
-                    var sites = Model.Item1.Where(s => s.Region == category.Name).ToList();
+                    var sites = Model.Item1.Where(s => s.City == category.Name).ToList();
                     <div id="tab-@category.CategoryId" class="tab-pane fade show p-0">
                         @if (sites.Any())
                         {
@@ -326,7 +326,7 @@
 
                                     <div class="col-lg-6">
                                         <div class="destination-img">
-                                            <img class="img-fluid rounded w-100" src="~/uploads/@item.MainImage" alt="">
+                                            <img class="img-fluid rounded w-100" src="@item.MainImage" alt="">
                                             <div class="destination-overlay p-4">
                                                 <a href="#" class="btn btn-primary text-white rounded-pill border py-2 px-3">@item.Category</a>
                                                 <h4 class="text-white mb-2 mt-3">@item.SiteName</h4>
