@@ -22,6 +22,7 @@
 								<th class="d-none d-md-table-cell">Catogry</th>
 								<th>Entry Fees</th>
 								<th>Openning Hours</th>
+								<th>IsActive</th>
 								<th>Action</th>
 
 
@@ -46,11 +47,13 @@
 									}
 									
 								<td>@item.OpeningHours</td>
+								<td>@item.IsActive</td>
 								<td>
-										<a class="btn btn-outline-info" style="float:left; margin-left:12px;" asp-action="RejectBooking" asp-route-SiteId="@item.SiteId">Show Details</a>
-										<a class="btn btn-outline-success" style="float:left; margin-left:12px;" asp-action="RejectBooking" asp-route-SiteId="@item.SiteId">View Details</a>
-										<a class="btn btn-outline-warning" style="margin-left:12px;" asp-action="RejectBooking" asp-route-SiteId="@item.SiteId">Edit</a>
-										<a class="btn btn-outline-danger" style="margin-left:12px;" asp-action="RejectBooking" asp-route-SiteId="@item.SiteId">Disable</a>
+
+										<a class="btn btn-outline-success" style="float:left; margin-left:12px;" asp-action="Edit" asp-route-id="@item.SiteId">View Details & Edit</a>
+									
+										<a class="btn btn-outline-danger" style="margin-left:12px;" asp-action="DisableSitd" asp-route-SiteId="@item.SiteId" asp-route-s="1">Disable </a>
+										<a class="btn btn-outline-info" style="margin-left:12px;" asp-action="DisableSitd" asp-route-SiteId="@item.SiteId" asp-route-s="0">Enable </a>
 								</td>
 
 							</tr>

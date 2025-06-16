@@ -187,11 +187,15 @@ namespace Jordana.Controllers
             //    .Include(m => m.BookingMembers)
             //    .Include(s => s.Site).ThenInclude(p => p.SiteMedia)
             //    .FirstOrDefault();
+            if (userId != null)
+            {
+                var test = _mydatabase.TouristsSites.Where(x => x.SiteId == Id)
+                             .Include(x => x.SiteMedia)
+                             .FirstOrDefault();
+                return View(test);
+            }
+            return RedirectToAction("Login");
 
-            var test = _mydatabase.TouristsSites.Where(x => x.SiteId == Id)
-                .Include(x => x.SiteMedia)
-                .FirstOrDefault();
-            return View(test);
         }
         [HttpPost]
         public IActionResult Booking(int siteId, DateTime bookingDate, DateTime bookingEndDate, string transporation,

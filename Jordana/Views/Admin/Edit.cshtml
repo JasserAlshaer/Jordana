@@ -1,0 +1,80 @@
+﻿@model Jordana.Models.TouristsSite
+
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "ManageDestinations";
+}
+
+
+<div class="container mt-4">
+    <h2 class="mb-3">Edit Tourist Site</h2>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <form asp-action="Edit"method="post">
+              
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label value="SiteName">SiteName</label>
+                            <input value="@Model.SiteName" name="SiteName" class="form-control" />
+   
+                        </div>
+                        <div class="form-group">
+                            <label value="SiteDescription">SiteDescription</label>
+                            <textarea  name="SiteDescription" class="form-control">
+                                @Model.SiteDescription
+                            </textarea>
+
+                        </div>
+                        <div class="form-group">
+                            <label value="City">City</label>
+                            <input value="@Model.City" name="City"  class="form-control" />
+                           
+                        </div>
+                        <div class="form-group">
+                            <label value="Region">Region</label>
+                            <input value="@Model.Region" name="Region" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label value="SiteLocation">SiteLocation</label>
+                            <input value="@Model.SiteLocation" name="SiteLocation" class="form-control" />
+                           
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label value="Lat">Latatuide</label>
+                            <input value="@Model.Lat" name="Lat" class="form-control" />
+                           
+                        </div>
+                        <div class="form-group">
+                            <label value="Long">Longtuide</label>
+                            <input value="@Model.Long" name="Long" class="form-control" />
+
+                        </div>
+                        <div class="form-group">
+                            <label value="EntryFee"></label>
+                            <input value="@Model.EntryFee" name="EntryFee" class="form-control" />
+                           
+                        </div>
+                        <div class="form-group">
+                            <label value="OpeningHours">OpeningHours</label>
+                            <input value="@Model.OpeningHours" name="OpeningHours" class="form-control" />
+                           
+                        </div>
+                   
+                    </div>
+                </div>
+
+                <input type="hidden" value="@Model.SiteId" name="SiteId" />
+
+                <div class="form-group text-end">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a asp-action="ManageDestinations" class="btn btn-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
