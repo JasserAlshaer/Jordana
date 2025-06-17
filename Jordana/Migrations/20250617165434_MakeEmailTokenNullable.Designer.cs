@@ -3,6 +3,7 @@ using System;
 using Jordana.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Jordana.Migrations
 {
     [DbContext(typeof(JordanaContext))]
-    partial class JordanaContextModelSnapshot : ModelSnapshot
+    [Migration("20250617165434_MakeEmailTokenNullable")]
+    partial class MakeEmailTokenNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -444,9 +446,8 @@ namespace Jordana.Migrations
 
                     b.Property<string>("CreatedBy")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(100)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(100)")
+                        .HasColumnType("longtext")
                         .HasDefaultValueSql("('System')");
 
                     b.Property<DateTime?>("CreationDate")
@@ -461,8 +462,7 @@ namespace Jordana.Migrations
                         .HasColumnType("varchar(70)");
 
                     b.Property<string>("EmailConfirmationToken")
-                        .HasMaxLength(255)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("IsEmailConfirmed")
                         .HasColumnType("tinyint(1)");
@@ -481,17 +481,15 @@ namespace Jordana.Migrations
 
                     b.Property<string>("ProfileImage")
                         .IsRequired()
-                        .HasMaxLength(255)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("longtext");
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime");
 
                     b.Property<string>("UpdatedBy")
-                        .HasMaxLength(100)
                         .IsUnicode(false)
-                        .HasColumnType("varchar(100)");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("UserType")
                         .IsRequired()

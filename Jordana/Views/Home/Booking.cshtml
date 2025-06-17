@@ -10,7 +10,7 @@
     <style>
         /* Set fixed size for carousel images */
         .carousel-inner img {
-        height: 400px; /* Adjust this height as needed */
+        height: 800px; /* Adjust this height as needed */
         object-fit: cover; /* Makes sure the image covers the area nicely */
         }
     </style>
@@ -43,7 +43,7 @@
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" style="max-width: 1500px; margin: auto;">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://capstone.zero1planet.com/uploads/bestback.jpeg" class="d-block w-100" alt="@Model.SiteName">
+                <img src="@Model.MainImage" class="d-block w-100" alt="@Model.SiteName">
             </div>
 
             @foreach(var image in Model.SiteMedia)

@@ -19,7 +19,9 @@ namespace Jordana.Models
         public virtual DbSet<UserFavorite> UserFavorites { get; set; } = null!;
         public virtual DbSet<SupportMessage> SupportMessages { get; set; } = null!;
         public virtual DbSet<PaymentCard> PaymentCards { get; set; } = null!;
-      
+     
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Net.Mail;
+using System.Net;
 using Google.Protobuf.WellKnownTypes;
 using Jordana.DTOs;
 using Jordana.Models;
@@ -24,15 +26,26 @@ namespace Jordana.Controllers
         [HttpPost]
         public IActionResult Login(string email, string password)
         {
-            var user = _mydatabase.Users.Where(x => x.Email == email && x.Password == password).SingleOrDefault();
+            
+            var user = _mydatabase.Users.SingleOrDefault(x => x.Email == email && x.Password == password);
             if (user == null)
             {
+                ModelState.AddModelError("", "Invalid credentials.");
                 return View();
             }
-
-
+            if (user.UserType != "Admin" && !user.IsEmailConfirmed)
+            {
+                ModelState.AddModelError("", "Please confirm your email before logging in.");
+                return View();
+            }
+            //if (!user.IsEmailConfirmed)
+            //{
+            //    ModelState.AddModelError("", "Please confirm your email before logging in.");
+            //    return View();
+            //}
 
             HttpContext.Session.SetInt32("UserId", user.UserId);
+
             if (user.UserType == "Admin")
             {
                 return RedirectToAction("Dashboard", "Admin");
@@ -46,10 +59,33 @@ namespace Jordana.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Signup(string fullname, string email, string password, string repassword, string phonenumber)
+        public async Task<IActionResult> Signup(string fullname, string email, string password, string repassword, string phonenumber)
         {
+           
+            if (password != repassword)
+            {
+                ModelState.AddModelError("", "Passwords do not match.");
+                return View();
+            }
 
-            User customer = new User()
+            if (password.Length < 8 ||
+                !password.Any(char.IsUpper) ||
+                !password.Any(char.IsLower) ||
+                !password.Any(char.IsDigit) ||
+                !password.Any(ch => "!@#$%^&*".Contains(ch)))
+            {
+                ModelState.AddModelError("", "Password must be at least 8 characters, include uppercase, lowercase, digit, and special character.");
+                return View();
+            }
+
+            var existingUser = _mydatabase.Users.FirstOrDefault(u => u.Email == email);
+            if (existingUser != null)
+            {
+                ModelState.AddModelError("", "This email is already registered.");
+                return View();
+            }
+
+            var customer = new User()
             {
                 Username = fullname,
                 Email = email,
@@ -58,12 +94,43 @@ namespace Jordana.Controllers
                 ProfileImage = "",
                 CreationDate = DateTime.Now,
                 CreatedBy = "system",
-                UserType = "User"
+                UserType = "User",
+                IsEmailConfirmed = false,
+                EmailConfirmationToken = Guid.NewGuid().ToString()
             };
+
             _mydatabase.Users.Add(customer);
-            _mydatabase.SaveChanges();
+            await _mydatabase.SaveChangesAsync();
+
+            string confirmationLink = Url.Action("ConfirmEmail", "Home", new { token = customer.EmailConfirmationToken }, Request.Scheme);
+            await SendConfirmationEmail(customer.Email, confirmationLink);
+
+            TempData["Message"] = "Account created! Please check your email to confirm.";
             return RedirectToAction("Login");
         }
+
+        public async Task<IActionResult> ConfirmEmail(string token)
+        {
+            var user = await _mydatabase.Users.FirstOrDefaultAsync(u => u.EmailConfirmationToken == token);
+            if (user == null)
+            {
+                return NotFound("Invalid or expired confirmation link.");
+            }
+
+            user.IsEmailConfirmed = true;
+            user.EmailConfirmationToken = null;
+            _mydatabase.Users.Update(user);
+            await _mydatabase.SaveChangesAsync();
+
+            var model = new EmailConfirmationViewModel
+            {
+                Email = user.Email,
+                Message = "Your email has been successfully confirmed! You can now log in."
+            };
+
+            return View("EmailConfirmed", model);
+        }
+
         public IActionResult ResetPassword()
         {
             return View();
@@ -387,6 +454,8 @@ namespace Jordana.Controllers
             }
             return RedirectToAction("MyReserviations");
         }
+        
+
 
         public async Task<IActionResult> Logout()
         {
@@ -402,6 +471,33 @@ namespace Jordana.Controllers
             });
             return Redirect(Request.Headers["Referer"].ToString());
         }
+        private async Task SendConfirmationEmail(string email, string link)
+        {
+            var smtpClient = new SmtpClient("smtp.gmail.com")
+            {
+                Port = 587,
+                Credentials = new NetworkCredential("rahoofibrahim21@gmail.com", "evvxfzlegzzhoght"),
+                EnableSsl = true,
+            };
+
+            var mailMessage = new MailMessage
+            {
+                From = new MailAddress("yourgmail@gmail.com", "Jordana Team"),
+                Subject = "Confirm Your Email - Jordana",
+                Body = $@"
+            <h3>Welcome to Jordana!</h3>
+            <p>Click the link below to confirm your email:</p>
+            <a href='{link}'>Verify Email</a><br><br>
+            <small>If you did not sign up, you can ignore this email.</small>",
+                IsBodyHtml = true,
+            };
+
+            mailMessage.To.Add(email);
+            await smtpClient.SendMailAsync(mailMessage);
+        }
+        
+
+
 
     }
 }

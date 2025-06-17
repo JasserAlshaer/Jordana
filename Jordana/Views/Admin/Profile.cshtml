@@ -4,46 +4,70 @@
     Layout = "_LayoutAdmin";
     ViewData["Title"] = "Profile";
 }
-
 <main class="d-flex w-100">
-    <div class="container d-flex flex-column">
-        <div class="row vh-100 justify-content-center align-items-center">
-            <div class="col-md-6 col-xl-5">
-                <div class="card mb-3">
+    <div class="container py-4">
+        <div class="row g-4 justify-content-center">
+
+
+            <div class="col-md-7 col-xl-6">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header">
                         <h5 class="card-title mb-0">Profile Details</h5>
                     </div>
                     <div class="card-body text-center">
-                        <img src="https://img.freepik.com/premium-vector/man-professional-business-casual-young-avatar-icon-illustration_1277826-623.jpg?semt=ais_hybrid&w=740" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
-                        <h5 class="card-title mb-0">@Model.Username</h5>
-                        <div class="text-muted mb-2">Adminstraitor/div>
+                        <div class="mb-3">
+                            <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png"
+                                 alt="User Avatar"
+                                 class="img-fluid rounded-circle shadow"
+                                 width="140"
+                                 height="140" />
+                        </div>
+                        <h5 class="card-title mt-2 mb-0">@Model.Username</h5>
+                        <div class="text-muted mb-2">Administrator</div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-xl-5">
-                <div class="card">
+
+            <div class="col-md-5 col-xl-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header">
                         <h5 class="card-title mb-0">Update Password</h5>
                     </div>
                     <div class="card-body">
                         <form asp-action="UpdatePasswordAdmin">
-                            <input type="hidden" value="@Model.UserId" name="UserId" />
+                            <input type="hidden" name="UserId" value="@Model.UserId" />
+
                             <div class="mb-3">
                                 <label class="form-label">New Password</label>
-                                    <input class="form-control form-control-lg" type="password" name="Pass" placeholder="Enter your new password" required />
+                                <input class="form-control form-control-lg"
+                                       type="password"
+                                       name="Pass"
+                                       placeholder="Enter your new password"
+                                       required />
                             </div>
+
                             <div class="mb-3">
                                 <label class="form-label">Confirm Password</label>
-                                    <input class="form-control form-control-lg" type="password" name="nPass" placeholder="Confirm your password" required />
+                                <input class="form-control form-control-lg"
+                                       type="password"
+                                       name="nPass"
+                                       placeholder="Confirm your password"
+                                       required />
                             </div>
+
                             <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-lg btn-primary">Update Password</button>
+                                <button type="submit"
+                                        class="btn btn-lg btn-primary">
+                                    Update Password
+                                </button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </main>
+
